@@ -133,7 +133,7 @@ end)
 
 UIGridLayout.Parent = GameMenu
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellPadding = UDim2.new(0, 15, 0, 15)
+UIGridLayout.CellPadding = UDim2.new(0, 23, 0, 23)
 UIGridLayout.CellSize = UDim2.new(0, 115, 0, 115)
 
 iconOPEN.Name = "iconOPEN"
