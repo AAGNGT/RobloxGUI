@@ -180,4 +180,4 @@ end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
-Notify("login OK","Enjoy", 4)
+Notify("Join GUI","Hi", 4)
