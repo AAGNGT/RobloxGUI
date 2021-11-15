@@ -67,7 +67,7 @@ exit.MouseButton1Down:connect(function()
 	
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
-	Notify("Leave GUI","Bye Bye", 4)
+	Notify("Leave GUI","Bye", 4)
 end)
      
 
