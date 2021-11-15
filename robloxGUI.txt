@@ -1,9 +1,11 @@
+-- local
 local ScreenGui = Instance.new("ScreenGui")
 local GUIMenu = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
 local UICorner_2 = Instance.new("UICorner")
 local ImageLabel = Instance.new("ImageLabel")
+local exit = Instance.new("TextButton")
 local Closure = Instance.new("TextButton")
 local GameMenu = Instance.new("ScrollingFrame")
 local script1 = Instance.new("ImageButton")
@@ -47,16 +49,38 @@ ImageLabel.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
 ImageLabel.Size = UDim2.new(0, 44, 0, 44)
 ImageLabel.Image = "http://www.roblox.com/asset/?id=7755851043"
 
+exit.Name = "exit"
+exit.Parent = GUIMenu
+exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+exit.Position = UDim2.new(0.915072918, 0, 0.0257846415, 0)
+exit.Size = UDim2.new(0, 35, 0, 35)
+exit.Font = Enum.Font.SourceSans
+exit.Text = "X"
+exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+exit.TextScaled = true
+exit.TextSize = 14.000
+exit.TextWrapped = true
+exit.MouseButton1Down:connect(function()
+	
+	GUIMenu.Visible = false
+	iconOPEN.Visible = false
+	
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
+
+	Notify("Leave GUI","Bye Bye", 4)
+end)
+     
+
+
 Closure.Name = "Closure"
 Closure.Parent = GUIMenu
-Closure.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Closure.Position = UDim2.new(0.915072918, 0, 0.0257846415, 0)
+Closure.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
+Closure.Position = UDim2.new(0.837328792, 0, 0.0243161097, 0)
 Closure.Size = UDim2.new(0, 35, 0, 35)
 Closure.Font = Enum.Font.SourceSans
-Closure.Text = "X"
+Closure.Text = "-"
 Closure.TextColor3 = Color3.fromRGB(0, 0, 0)
-Closure.TextScaled = true
-Closure.TextSize = 14.000
+Closure.TextSize = 71.000
 Closure.TextWrapped = true
 Closure.MouseButton1Down:connect(function()
 
@@ -133,8 +157,8 @@ end)
 
 UIGridLayout.Parent = GameMenu
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellPadding = UDim2.new(0, 23, 0, 23)
-UIGridLayout.CellSize = UDim2.new(0, 115, 0, 115)
+UIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
+UIGridLayout.CellSize = UDim2.new(0, 120, 0, 120)
 
 iconOPEN.Name = "iconOPEN"
 iconOPEN.Parent = ScreenGui
