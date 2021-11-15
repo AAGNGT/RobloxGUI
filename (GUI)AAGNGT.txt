@@ -61,15 +61,15 @@ exit.TextScaled = true
 exit.TextSize = 14.000
 exit.TextWrapped = true
 exit.MouseButton1Down:connect(function()
-
+	
 	GUIMenu.Visible = false
 	iconOPEN.Visible = false
-
+	
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
 	Notify("Leave GUI","Bye", 4)
 end)
-
+     
 
 
 Closure.Name = "Closure"
@@ -109,10 +109,6 @@ script1.Size = UDim2.new(0, 100, 0, 100)
 script1.Image = "http://www.roblox.com/asset/?id=7997842374"
 script1.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-	
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
-	Notify("loading","BedWars", 2.5)
 end)
 
 script2.Name = "script2"
@@ -123,10 +119,6 @@ script2.Size = UDim2.new(0, 100, 0, 100)
 script2.Image = "http://www.roblox.com/asset/?id=8000230044"
 script2.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/eqL5LdQQ", true))()
-	
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
-	Notify("loading","Prison life", 2.5)
 end)
 
 script3.Name = "script3"
@@ -135,10 +127,6 @@ script3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script3.Size = UDim2.new(0, 100, 0, 100)
 script3.Image = "http://www.roblox.com/asset/?id=8000901170"
 script3.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
-	Notify("loading","skateboard", 2.5)
-	
 	_G.coinfarm = true
 	while _G.coinfarm do
 		local CoinLocations = game:GetService("Workspace").CoinLocations:GetChildren()
@@ -165,10 +153,6 @@ script4.Size = UDim2.new(0, 100, 0, 100)
 script4.Image = "http://www.roblox.com/asset/?id=8005573834"
 script4.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
-	
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
-	Notify("loading","MM2", 2.5)
 end)
 
 UIGridLayout.Parent = GameMenu
