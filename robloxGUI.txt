@@ -9,6 +9,7 @@ local GameMenu = Instance.new("ScrollingFrame")
 local script1 = Instance.new("ImageButton")
 local script2 = Instance.new("ImageButton")
 local script3 = Instance.new("ImageButton")
+local script4 = Instance.new("ImageButton")
 local iconOPEN = Instance.new("ImageButton")
 local UIGridLayout = Instance.new("UIGridLayout")
 
@@ -119,6 +120,15 @@ script3.MouseButton1Down:connect(function()
 
 		end
 	end
+end)
+
+script4.Name = "script4"
+script4.Parent = GameMenu
+script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script4.Size = UDim2.new(0, 100, 0, 100)
+script4.Image = "http://www.roblox.com/asset/?id=8005573834"
+script4.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
 end)
 
 UIGridLayout.Parent = GameMenu
