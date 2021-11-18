@@ -101,6 +101,7 @@ GameMenu.Position = UDim2.new(0.0172344893, 0, 0.20364742, 0)
 GameMenu.Size = UDim2.new(0, 559, 0, 249)
 
 -------- script------------
+
 script1.Name = "script1"
 script1.Parent = GameMenu
 script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
