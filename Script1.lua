@@ -12,6 +12,7 @@ local script1 = Instance.new("ImageButton")
 local script2 = Instance.new("ImageButton")
 local script3 = Instance.new("ImageButton")
 local script4 = Instance.new("ImageButton")
+local script5 = Instance.new("ImageButton")
 local iconOPEN = Instance.new("ImageButton")
 local UIGridLayout = Instance.new("UIGridLayout")
 
@@ -70,8 +71,6 @@ exit.MouseButton1Down:connect(function()
 	Notify("Leave GUI","Bye", 4)
 end)
 
-
-
 Closure.Name = "Closure"
 Closure.Parent = GUIMenu
 Closure.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
@@ -101,6 +100,7 @@ GameMenu.BackgroundColor3 = Color3.fromRGB(90, 99, 99)
 GameMenu.Position = UDim2.new(0.0172344893, 0, 0.20364742, 0)
 GameMenu.Size = UDim2.new(0, 559, 0, 249)
 
+-------- script------------
 script1.Name = "script1"
 script1.Parent = GameMenu
 script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -153,6 +153,15 @@ script4.Size = UDim2.new(0, 100, 0, 100)
 script4.Image = "http://www.roblox.com/asset/?id=8005573834"
 script4.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
+end)
+
+script5.Name = "script5"
+script5.Parent = GameMenu
+script5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script5.Size = UDim2.new(0, 100, 0, 100)
+script5.Image = "http://www.roblox.com/asset/?id=8032189927"
+script5.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
 end)
 
 UIGridLayout.Parent = GameMenu
