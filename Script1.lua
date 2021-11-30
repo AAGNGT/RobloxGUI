@@ -87,7 +87,6 @@ Closure.MouseButton1Down:connect(function()
 		UDim2.new(0.282, 0, -0.517, 0)
 	)
 
-	GUIMenu.Visible = true
 	wait(0.9)
 	iconOPEN.Visible = true
 	GUIMenu.Visible = false
