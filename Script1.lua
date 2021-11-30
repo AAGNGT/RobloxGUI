@@ -1,4 +1,4 @@
--- local v.2.4
+----------- Roblox GUI -----------
 local ScreenGui = Instance.new("ScreenGui")
 local GUIMenu = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -16,6 +16,8 @@ local script5 = Instance.new("ImageButton")
 local iconOPEN = Instance.new("ImageButton")
 local UIGridLayout = Instance.new("UIGridLayout")
 
+--Version:
+VersionGUI = "GUI v2.4.1"
 --Properties:
 
 ScreenGui.Parent = game.CoreGui
@@ -36,7 +38,7 @@ TextLabel.Parent = GUIMenu
 TextLabel.BackgroundColor3 = Color3.fromRGB(103, 68, 0)
 TextLabel.Size = UDim2.new(0, 584, 0, 52)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "GUI v2.4.1"                    -- GUI
+TextLabel.Text = VersionGUI                    --------GUI--------
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
