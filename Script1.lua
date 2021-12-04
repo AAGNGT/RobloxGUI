@@ -1,28 +1,31 @@
 ----------- Roblox GUI -----------
-local ScreenGui = Instance.new("ScreenGui")
-local GUIMenu = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local UICorner_2 = Instance.new("UICorner")
-local ImageLabel = Instance.new("ImageLabel")
-local exit = Instance.new("TextButton")
-local Closure = Instance.new("TextButton")
-local GameMenu = Instance.new("ScrollingFrame")
-local script1 = Instance.new("ImageButton")
-local script2 = Instance.new("ImageButton")
-local script3 = Instance.new("ImageButton")
-local script4 = Instance.new("ImageButton")
-local script5 = Instance.new("ImageButton")
-local iconOPEN = Instance.new("ImageButton")
-local UIGridLayout = Instance.new("UIGridLayout")
+local GUIMenu = Instance.new("Frame")           --主畫面
+local ScreenGui = Instance.new("ScreenGui")     --結合ScreenGui
+local GUIUICorner = Instance.new("UICorner")    --GUI圈圓形
+local VersionUICorner = Instance.new("UICorner")--Version外圈圓形
+local VersionText = Instance.new("TextLabel")   --版本Text
+local icon = Instance.new("ImageLabel")         --icon
+
+local exit = Instance.new("TextButton")          --離開主選單exit
+local Closure = Instance.new("TextButton")       --關閉主選單Closure
+local iconOPEN = Instance.new("ImageButton")     --開啟主選單
+
+local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
+local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
+local script1 = Instance.new("ImageButton")      --BedWars
+local script2 = Instance.new("ImageButton")      --監獄人生
+local script3 = Instance.new("ImageButton")      --Vans World
+local script4 = Instance.new("ImageButton")      --誰是殺手
+local script5 = Instance.new("ImageButton")      --時髦星期五
 
 --Version:
-VersionGUI = "GUI v2.4.1"
---Properties:
+VersionGUI = "GUI v2.4.2"
 
+--Properties:
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+--主畫面--
 GUIMenu.Name = "GUIMenu"
 GUIMenu.Parent = ScreenGui
 GUIMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
@@ -32,26 +35,31 @@ GUIMenu.Visible = false
 GUIMenu.Active = true
 GUIMenu.Draggable = true
 
-UICorner.Parent = GUIMenu
+--GUI圈圓形
+GUIUICorner.Parent = GUIMenu
 
-TextLabel.Parent = GUIMenu
-TextLabel.BackgroundColor3 = Color3.fromRGB(103, 68, 0)
-TextLabel.Size = UDim2.new(0, 584, 0, 52)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = VersionGUI                    --------GUI--------
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+--版本Text
+VersionText.Parent = GUIMenu
+VersionText.BackgroundColor3 = Color3.fromRGB(103, 68, 0)
+VersionText.Size = UDim2.new(0, 584, 0, 52)
+VersionText.Font = Enum.Font.SourceSans
+VersionText.Text = VersionGUI                    --------GUI--------
+VersionText.TextColor3 = Color3.fromRGB(0, 0, 0)
+VersionText.TextScaled = true
+VersionText.TextSize = 14.000
+VersionText.TextWrapped = true
 
-UICorner_2.Parent = TextLabel
+--Version外圈圓形
+VersionUICorner.Parent = VersionText
 
-ImageLabel.Parent = GUIMenu
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
-ImageLabel.Size = UDim2.new(0, 44, 0, 44)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=7755851043"
+--icon
+icon.Parent = GUIMenu
+icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+icon.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
+icon.Size = UDim2.new(0, 44, 0, 44)
+icon.Image = "http://www.roblox.com/asset/?id=7755851043"
 
+--離開主選單exit
 exit.Name = "exit"
 exit.Parent = GUIMenu
 exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -73,6 +81,7 @@ exit.MouseButton1Down:connect(function()
 	Notify("Leave GUI","Bye", 4)
 end)
 
+--關閉主選單Closure
 Closure.Name = "Closure"
 Closure.Parent = GUIMenu
 Closure.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
@@ -94,6 +103,27 @@ Closure.MouseButton1Down:connect(function()
 	GUIMenu.Visible = false
 end)
 
+--開啟主選單
+iconOPEN.Name = "iconOPEN"
+iconOPEN.Parent = ScreenGui
+iconOPEN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+iconOPEN.BorderSizePixel = 0
+iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
+iconOPEN.Size = UDim2.new(0, 100, 0, 100)
+iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
+iconOPEN.BackgroundTransparency = 1
+iconOPEN.MouseButton1Click:connect(function()
+
+	GUIMenu:TweenPosition(
+		UDim2.new(0.282, 0, 0.432, 0)
+	)
+
+
+	GUIMenu.Visible = true
+	iconOPEN.Visible = false
+end)
+
+-------- script-------------------- script-------------------- script-------------------- script-------------------- script------------
 GameMenu.Name = "GameMenu"
 GameMenu.Parent = GUIMenu
 GameMenu.Active = true
@@ -101,7 +131,8 @@ GameMenu.BackgroundColor3 = Color3.fromRGB(90, 99, 99)
 GameMenu.Position = UDim2.new(0.0172344893, 0, 0.20364742, 0)
 GameMenu.Size = UDim2.new(0, 559, 0, 249)
 
--------- script------------
+
+--BedWars
 script1.Name = "script1"
 script1.Parent = GameMenu
 script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -112,6 +143,7 @@ script1.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
 
+--監獄人生
 script2.Name = "script2"
 script2.Parent = GameMenu
 script2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -122,6 +154,7 @@ script2.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/eqL5LdQQ", true))()
 end)
 
+--Vans World
 script3.Name = "script3"
 script3.Parent = GameMenu
 script3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -147,6 +180,7 @@ script3.MouseButton1Down:connect(function()
 	end
 end)
 
+--誰是殺手
 script4.Name = "script4"
 script4.Parent = GameMenu
 script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -156,6 +190,7 @@ script4.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
 end)
 
+--時髦星期五
 script5.Name = "script5"
 script5.Parent = GameMenu
 script5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -165,29 +200,13 @@ script5.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
 end)
 
-UIGridLayout.Parent = GameMenu
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
-UIGridLayout.CellSize = UDim2.new(0, 120, 0, 120)
+--自動排版
+GameUIGridLayout.Parent = GameMenu
+GameUIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+GameUIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
+GameUIGridLayout.CellSize = UDim2.new(0, 120, 0, 120)
 
-iconOPEN.Name = "iconOPEN"
-iconOPEN.Parent = ScreenGui
-iconOPEN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-iconOPEN.BorderSizePixel = 0
-iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
-iconOPEN.Size = UDim2.new(0, 100, 0, 100)
-iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
-iconOPEN.MouseButton1Click:connect(function()
-
-	GUIMenu:TweenPosition(
-		UDim2.new(0.282, 0, 0.432, 0)
-	)
-
-
-	GUIMenu.Visible = true
-	iconOPEN.Visible = false
-end)
-
+--loading say hi
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
 Notify("Join GUI","Hi", 4)
