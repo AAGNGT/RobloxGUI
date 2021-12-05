@@ -70,7 +70,7 @@ ResetText.Position = UDim2.new(0.375811696, 0, 0.109149285, 0)
 ResetText.Size = UDim2.new(0, 291, 0, 68)
 ResetText.Font = Enum.Font.SourceSans
 ResetText.Text = "Resetting"
-ResetText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ResetText.TextColor3 = Color3.fromRGB(0, 255, 0)
 ResetText.TextScaled = true
 ResetText.TextSize = 14.000
 ResetText.TextWrapped = true
@@ -90,8 +90,8 @@ resetBtn.MouseButton1Click:connect(function()
 	iconOPEN.Visible = false
 
 	ResetText.Visible = true
-	
- 	local Reset = 0
+
+	local Reset = 0
 
 	while Reset < 7 do
 		Reset += 1
@@ -103,9 +103,12 @@ resetBtn.MouseButton1Click:connect(function()
 		wait(0.2)
 	end
 
+	ResetText.Text = "ok"
+	wait(1.1)
+	ResetText.Text = "Please reload the script"
+	wait(3)
 	ResetText.Visible = false
 
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/Script1.lua", true))()	
 end)
 
 --離開主選單exit
