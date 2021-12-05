@@ -70,7 +70,7 @@ ResetText.Position = UDim2.new(0.375811696, 0, 0.109149285, 0)
 ResetText.Size = UDim2.new(0, 291, 0, 68)
 ResetText.Font = Enum.Font.SourceSans
 ResetText.Text = "Resetting"
-ResetText.TextColor3 = Color3.fromRGB(0, 255, 0)
+ResetText.TextColor3 = Color3.fromRGB(255, 0, 0)
 ResetText.TextScaled = true
 ResetText.TextSize = 14.000
 ResetText.TextWrapped = true
@@ -103,6 +103,7 @@ resetBtn.MouseButton1Click:connect(function()
 		wait(0.2)
 	end
 
+	ResetText.TextColor3 = Color3.fromRGB(85, 255, 0)
 	ResetText.Text = "ok"
 	wait(1.1)
 	ResetText.Text = "Please reload the script"
