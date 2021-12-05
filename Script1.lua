@@ -10,6 +10,7 @@ local exit = Instance.new("TextButton")          --離開主選單exit
 local Closure = Instance.new("TextButton")       --關閉主選單Closure
 local iconOPEN = Instance.new("ImageButton")     --開啟主選單
 local resetBtn = Instance.new("ImageButton")     --重設按鈕
+ResetText = Instance.new("TextLabel")            --重設Text
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
@@ -60,6 +61,21 @@ icon.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
 icon.Size = UDim2.new(0, 44, 0, 44)
 icon.Image = "http://www.roblox.com/asset/?id=7755851043"
 
+--重設Text
+ResetText.Name = "ResetText"
+ResetText.Parent = ScreenGui
+ResetText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ResetText.BackgroundTransparency = 1.000
+ResetText.Position = UDim2.new(0.375811696, 0, 0.109149285, 0)
+ResetText.Size = UDim2.new(0, 291, 0, 68)
+ResetText.Font = Enum.Font.SourceSans
+ResetText.Text = "Resetting"
+ResetText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ResetText.TextScaled = true
+ResetText.TextSize = 14.000
+ResetText.TextWrapped = true
+ResetText.Visible = false
+
 --重設按鈕
 resetBtn.Name = "resetBtn"
 resetBtn.Parent = GUIMenu
@@ -69,10 +85,27 @@ resetBtn.Position = UDim2.new(0.746686578, 0, 0.0101122279, 0)
 resetBtn.Size = UDim2.new(0, 45, 0, 45)
 resetBtn.Image = "rbxassetid://8181273323"
 resetBtn.MouseButton1Click:connect(function()
-	
+
 	GUIMenu.Visible = false
 	iconOPEN.Visible = false
+
+	ResetText.Visible = true
 	
+ 	local Reset = 0
+
+	while Reset < 7 do
+		Reset += 1
+		ResetText.Text = "Resetting."
+		wait(0.2)
+		ResetText.Text = "Resetting.."
+		wait(0.2)
+		ResetText.Text = "Resetting..."
+		wait(0.2)
+	end
+
+	ResetText.Visible = false
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/Script1.lua", true))()	
 end)
 
 --離開主選單exit
