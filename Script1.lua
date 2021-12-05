@@ -9,6 +9,7 @@ local icon = Instance.new("ImageLabel")         --icon
 local exit = Instance.new("TextButton")          --離開主選單exit
 local Closure = Instance.new("TextButton")       --關閉主選單Closure
 local iconOPEN = Instance.new("ImageButton")     --開啟主選單
+local resetBtn = Instance.new("ImageButton")     --重設按鈕
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
@@ -58,6 +59,21 @@ icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 icon.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
 icon.Size = UDim2.new(0, 44, 0, 44)
 icon.Image = "http://www.roblox.com/asset/?id=7755851043"
+
+--重設按鈕
+resetBtn.Name = "resetBtn"
+resetBtn.Parent = GUIMenu
+resetBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+resetBtn.BackgroundTransparency = 1.000
+resetBtn.Position = UDim2.new(0.746686578, 0, 0.0101122279, 0)
+resetBtn.Size = UDim2.new(0, 45, 0, 45)
+resetBtn.Image = "rbxassetid://8181273323"
+resetBtn.MouseButton1Click:connect(function()
+	
+	GUIMenu.Visible = false
+	iconOPEN.Visible = false
+	
+end)
 
 --離開主選單exit
 exit.Name = "exit"
