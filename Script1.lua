@@ -21,7 +21,7 @@ local script4 = Instance.new("ImageButton")      --誰是殺手
 local script5 = Instance.new("ImageButton")      --時髦星期五
 
 --Version:
-VersionGUI = "GUI v1.1.3"
+VersionGUI = "GUI v1.1.4"
 
 --Properties:
 ScreenGui.Parent = game.CoreGui
