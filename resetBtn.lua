@@ -1,12 +1,5 @@
-local GUIMenu = Instance.new("Frame")    
-local iconOPEN = Instance.new("ImageButton") 
-local resetBtn = Instance.new("ImageButton")    
+ 
 ResetText = Instance.new("TextLabel")    
-
-GUIMenu.Visible = false
-iconOPEN.Visible = false
-
-ResetText.Visible = true
 
 local Reset = 0
 
