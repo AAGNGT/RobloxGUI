@@ -126,12 +126,19 @@ exit.TextSize = 14.000
 exit.TextWrapped = true
 exit.MouseButton1Down:connect(function()
 
-	GUIMenu.Visible = false
 	iconOPEN.Visible = false
 
+	GUIMenu:TweenPosition(
+		UDim2.new(0.282, 0, -0.517, 0)
+	)
+    wait(0.5)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
 	Notify("Leave GUI","Bye", 4)
+
+
+	
+	GUIMenu.Visible = false
 end)
 
 --關閉主選單Closure
