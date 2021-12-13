@@ -11,6 +11,7 @@ local Closure = Instance.new("TextButton")       --關閉主選單Closure
 local iconOPEN = Instance.new("ImageButton")     --開啟主選單
 local resetBtn = Instance.new("ImageButton")     --重設按鈕
 ResetText = Instance.new("TextLabel")            --重設Text
+local settingBtn = Instance.new("ImageButton")   --設置按鈕
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
@@ -21,7 +22,7 @@ local script4 = Instance.new("ImageButton")      --誰是殺手
 local script5 = Instance.new("ImageButton")      --時髦星期五
 
 --Version:
-VersionGUI = "GUI v1.1.5"
+VersionGUI = "GUI v1.1.6"
 
 --Properties:
 ScreenGui.Parent = game.CoreGui
@@ -81,7 +82,7 @@ resetBtn.Name = "resetBtn"
 resetBtn.Parent = GUIMenu
 resetBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 resetBtn.BackgroundTransparency = 1.000
-resetBtn.Position = UDim2.new(0.746686578, 0, 0.0101122279, 0)
+resetBtn.Position = UDim2.new(0.682, 0, 0.01, 0)
 resetBtn.Size = UDim2.new(0, 45, 0, 45)
 resetBtn.Image = "rbxassetid://8181273323"
 resetBtn.MouseButton1Click:connect(function()
@@ -131,13 +132,13 @@ exit.MouseButton1Down:connect(function()
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, -0.517, 0)
 	)
-    wait(0.5)
+	wait(0.5)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
 	Notify("Leave GUI","Bye", 4)
 
 
-	
+
 	GUIMenu.Visible = false
 end)
 
@@ -182,6 +183,15 @@ iconOPEN.MouseButton1Click:connect(function()
 	GUIMenu.Visible = true
 	iconOPEN.Visible = false
 end)
+
+--設置按鈕
+settingBtn.Name = "settingBtn"
+settingBtn.Parent = GUIMenu
+settingBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+settingBtn.BackgroundTransparency = 1.000
+settingBtn.Position = UDim2.new(0.760273993, 0, 0.00911856815, 0)
+settingBtn.Size = UDim2.new(0, 45, 0, 45)
+settingBtn.Image = "rbxassetid://8243379485"
 
 -------- script-------------------- script-------------------- script-------------------- script-------------------- script------------
 GameMenu.Name = "GameMenu"
