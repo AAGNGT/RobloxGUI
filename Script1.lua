@@ -149,7 +149,11 @@ resetBtn.MouseButton1Click:connect(function()
 		ResetText.Text = "Resetting..."
 		wait(0.2)
 	end
-
+	
+Black:TweenPosition(
+	UDim2.new(0, 0,-1, 0)
+	)
+	
 	ResetText.TextColor3 = Color3.fromRGB(85, 255, 0)
 	ResetText.Text = "ok"
 	wait(1.1)
