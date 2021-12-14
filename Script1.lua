@@ -6,6 +6,7 @@ local VersionUICorner = Instance.new("UICorner")--Version外圈圓形
 local SettingCorner = Instance.new("UICorner")  --設置圓形
 local VersionText = Instance.new("TextLabel")   --版本Text
 local icon = Instance.new("ImageLabel")         --icon
+local Black = Instance.new("Frame")             --護眼畫面
 
 local exit = Instance.new("TextButton")          --離開主選單exit
 local Closure = Instance.new("TextButton")       --關閉主選單Closure
@@ -14,7 +15,6 @@ local resetBtn = Instance.new("ImageButton")     --重設按鈕
 ResetText = Instance.new("TextLabel")            --重設Text
 local settingBtn = Instance.new("ImageButton")   --設置按鈕
 local SettingMenu = Instance.new("Frame")        --設置Menu
-
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
@@ -25,7 +25,7 @@ local script4 = Instance.new("ImageButton")      --誰是殺手
 local script5 = Instance.new("ImageButton")      --時髦星期五
 
 --Version:
-VersionGUI = "GUI v1.1.7"
+VersionGUI = "GUI v1.1.8"
 
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
@@ -41,6 +41,48 @@ GUIMenu.Size = UDim2.new(0, 584, 0, 329)
 GUIMenu.Visible = false
 GUIMenu.Active = true
 GUIMenu.Draggable = true
+
+--護眼畫面
+Black.Parent = ScreenGui
+Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Black.BackgroundTransparency = 0.660
+Black.Size = UDim2.new(1, 0, 1, 0)
+Black.ZIndex = 0
+Black.Visible = false
+
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+
+TextLabel.Parent = SettingMenu
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.035, 0, 0.043, 0)
+TextLabel.Size = UDim2.new(0, 173, 0, 47)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Eye protection"
+TextLabel.TextColor3 = Color3.fromRGB(190, 190, 190)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextButton.Parent = SettingMenu
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.Position = UDim2.new(0.827, 0, 0.068, 0)
+TextButton.Size = UDim2.new(0, 30, 0, 30)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Click:connect(function()
+	if Black.Visible == false then
+		TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		Black.Visible = true
+	else
+		Black.Visible = false
+		TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end	
+end)
+
 
 --GUI圈圓形
 GUIUICorner.Parent = GUIMenu
@@ -136,6 +178,9 @@ exit.MouseButton1Down:connect(function()
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, -0.517, 0)
 	)
+	Black:TweenPosition(
+		UDim2.new(0, 0,-1, 0)
+	)
 	wait(0.5)
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
 
@@ -144,6 +189,7 @@ exit.MouseButton1Down:connect(function()
 
 
 	GUIMenu.Visible = false
+	Black.Visible = false
 end)
 
 --關閉主選單Closure
