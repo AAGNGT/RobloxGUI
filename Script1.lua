@@ -23,9 +23,10 @@ local script2 = Instance.new("ImageButton")      --監獄人生
 local script3 = Instance.new("ImageButton")      --Vans World
 local script4 = Instance.new("ImageButton")      --誰是殺手
 local script5 = Instance.new("ImageButton")      --時髦星期五
+local script6 = Instance.new("ImageButton")      --arsenal
 
 --Version:
-VersionGUI = "GUI v1.1.8"
+VersionGUI = "GUI v1.1.9"
 
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
@@ -150,10 +151,10 @@ resetBtn.MouseButton1Click:connect(function()
 		wait(0.2)
 	end
 	
-Black:TweenPosition(
-	UDim2.new(0, 0,-1, 0)
+	Black:TweenPosition(
+		UDim2.new(0, 0,-1, 0)
 	)
-	
+
 	ResetText.TextColor3 = Color3.fromRGB(85, 255, 0)
 	ResetText.Text = "ok"
 	wait(1.1)
@@ -335,6 +336,16 @@ script5.Size = UDim2.new(0, 100, 0, 100)
 script5.Image = "http://www.roblox.com/asset/?id=8032189927"
 script5.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+end)
+
+--arsenal
+script6.Name = "script6"
+script6.Parent = GameMenu
+script6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script6.Size = UDim2.new(0, 100, 0, 100)
+script6.Image = "http://www.roblox.com/asset/?id=7699371504"
+script6.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
 end)
 
 --自動排版
