@@ -3,6 +3,7 @@ local GUIMenu = Instance.new("Frame")           --主畫面
 local ScreenGui = Instance.new("ScreenGui")     --結合ScreenGui
 local GUIUICorner = Instance.new("UICorner")    --GUI圈圓形
 local VersionUICorner = Instance.new("UICorner")--Version外圈圓形
+local SettingCorner = Instance.new("UICorner")  --設置圓形
 local VersionText = Instance.new("TextLabel")   --版本Text
 local icon = Instance.new("ImageLabel")         --icon
 
@@ -12,6 +13,8 @@ local iconOPEN = Instance.new("ImageButton")     --開啟主選單
 local resetBtn = Instance.new("ImageButton")     --重設按鈕
 ResetText = Instance.new("TextLabel")            --重設Text
 local settingBtn = Instance.new("ImageButton")   --設置按鈕
+local SettingMenu = Instance.new("Frame")        --設置Menu
+
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
@@ -22,11 +25,12 @@ local script4 = Instance.new("ImageButton")      --誰是殺手
 local script5 = Instance.new("ImageButton")      --時髦星期五
 
 --Version:
-VersionGUI = "GUI v1.1.6"
+VersionGUI = "GUI v1.1.7"
 
---Properties:
+--ScreenGui:
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.IgnoreGuiInset = true
 
 --主畫面--
 GUIMenu.Name = "GUIMenu"
@@ -192,6 +196,19 @@ settingBtn.BackgroundTransparency = 1.000
 settingBtn.Position = UDim2.new(0.760273993, 0, 0.00911856815, 0)
 settingBtn.Size = UDim2.new(0, 45, 0, 45)
 settingBtn.Image = "rbxassetid://8243379485"
+settingBtn.MouseButton1Click:connect(function()
+	SettingMenu.Visible = not SettingMenu.Visible	
+end)
+
+--設置Menu
+SettingMenu.Name = "SettingMenu"
+SettingMenu.Parent = GUIMenu
+SettingMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
+SettingMenu.Position = UDim2.new(1.01369858, 0, 0.00911854114, 0)
+SettingMenu.Size = UDim2.new(0, 226, 0, 323)
+SettingMenu.Visible = false
+
+SettingCorner.Parent = SettingMenu
 
 -------- script-------------------- script-------------------- script-------------------- script-------------------- script------------
 GameMenu.Name = "GameMenu"
