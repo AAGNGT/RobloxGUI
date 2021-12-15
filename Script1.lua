@@ -46,10 +46,9 @@ GUIMenu.Draggable = true
 --護眼畫面
 Black.Parent = ScreenGui
 Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Black.BackgroundTransparency = 0.660
+Black.BackgroundTransparency = 1
 Black.Size = UDim2.new(1, 0, 1, 0)
 Black.ZIndex = 0
-Black.Visible = false
 
 local TextLabel = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
@@ -75,16 +74,33 @@ TextButton.Text = ""
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Click:connect(function()
-	if Black.Visible == false then 
-		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
-		wait(0.5)
+	if TextButton.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then 
+		TextButton.Visible = false
+		wait(0.2)
+		Black.BackgroundTransparency = 0.90
+		wait(0.2)
+		Black.BackgroundTransparency = 0.80
+		wait(0.2)
+		Black.BackgroundTransparency = 0.70
+		wait(0.2)
+		Black.BackgroundTransparency = 0.65
+		wait(0.2)
+		Black.BackgroundTransparency = 0.57
+		TextButton.Visible = true
 		TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-		Black.Visible = true
 	else
-		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
-		wait(0.5)
+		TextButton.Visible = false
+		Black.BackgroundTransparency = 0.65
+		wait(0.2)
+		Black.BackgroundTransparency = 0.70
+		wait(0.2)
+		Black.BackgroundTransparency = 0.80
+		wait(0.2)
+		Black.BackgroundTransparency = 0.90
+		wait(0.2)
+		Black.BackgroundTransparency = 1
+		TextButton.Visible = true
 		TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-		Black.Visible = false
 	end	
 end)
 
