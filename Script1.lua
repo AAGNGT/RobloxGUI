@@ -26,7 +26,7 @@ local script5 = Instance.new("ImageButton")      --時髦星期五
 local script6 = Instance.new("ImageButton")      --arsenal
 
 --Version:
-VersionGUI = "GUI v1.1.9"
+VersionGUI = "GUI v1.2.0"
 
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
@@ -75,12 +75,16 @@ TextButton.Text = ""
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Click:connect(function()
-	if Black.Visible == false then
+	if Black.Visible == false then 
+		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+		wait(0.5)
 		TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 		Black.Visible = true
 	else
-		Black.Visible = false
+		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+		wait(0.5)
 		TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		Black.Visible = false
 	end	
 end)
 
