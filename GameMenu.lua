@@ -133,7 +133,7 @@ icon.Image = "http://www.roblox.com/asset/?id=7755851043"
 
 --go script
 Script.Name = "Script"
-Script.Parent = game.StarterGui.GameGUI.GUIMenu
+Script.Parent = GUIMenu
 Script.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Script.BackgroundTransparency = 1.000
 Script.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
