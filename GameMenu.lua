@@ -16,6 +16,8 @@ ResetText = Instance.new("TextLabel")            --重設Text
 local settingBtn = Instance.new("ImageButton")   --設置按鈕
 local SettingMenu = Instance.new("Frame")        --設置Menu
 
+local Script = Instance.new("ImageButton")       --go script 
+
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 local script1 = Instance.new("ImageButton")      --BedWars
@@ -128,6 +130,18 @@ icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 icon.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
 icon.Size = UDim2.new(0, 44, 0, 44)
 icon.Image = "http://www.roblox.com/asset/?id=7755851043"
+
+--go script
+Script.Name = "Script"
+Script.Parent = game.StarterGui.GameGUI.GUIMenu
+Script.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Script.BackgroundTransparency = 1.000
+Script.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
+Script.Size = UDim2.new(0, 50, 0, 50)
+Script.Image = "rbxassetid://8278845824"
+Script.MouseButton1Click:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
+end)
 
 --重設Text
 ResetText.Name = "ResetText"
