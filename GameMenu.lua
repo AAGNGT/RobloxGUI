@@ -22,7 +22,7 @@ local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 
 --Version:
-VersionGUI = "GUI v1.2.1"
+VersionGUI = "GUI v1.2.2"
 
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
@@ -307,7 +307,7 @@ GameMenu.Size = UDim2.new(0, 559, 0, 249)
 
 --Roblox Studio
 script1.Name = "script1"
-script1.Parent = game.StarterGui.GameGUI.GUIMenu.GameMenu
+script1.Parent = GameMenu
 script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script1.Size = UDim2.new(0, 100, 0, 100)
 script1.Image = "http://www.roblox.com/asset/?id=5150434563"
