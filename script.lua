@@ -1,6 +1,7 @@
 --screenGui
 local ScriptGUI = Instance.new("ScreenGui")
 local Sound = Instance.new("Sound")
+
 --PasswordGui
 local PasswordFrame = Instance.new("Frame")
 local PasswordFrame_2 = Instance.new("Frame")
@@ -49,6 +50,7 @@ exit.MouseButton1Click:connect(function()
 	PasswordFrame:TweenPosition(
 		UDim2.new(0.384, 0, -1, 0)
 	)
+	Sound:Play()
 end)
 
 UICorner_3.Parent = exit
@@ -111,7 +113,9 @@ PassBtn.MouseButton1Click:connect(function()
 	if PassBox.Text == PlayId and 
 		PassBox_2.Text == "AAGNGT" then
 		PassBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		Sound:Play()
 	else
+		Sound:Play()
 		PassBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		wait(1.5)
 		PassBtn.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
@@ -121,4 +125,3 @@ end)
 PasswordFrame:TweenPosition(
 	UDim2.new(0.384, 0, 0.205457464, 0)
 )
-
