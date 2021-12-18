@@ -20,12 +20,6 @@ local Script = Instance.new("ImageButton")       --go script
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
-local script1 = Instance.new("ImageButton")      --BedWars
-local script2 = Instance.new("ImageButton")      --監獄人生
-local script3 = Instance.new("ImageButton")      --Vans World
-local script4 = Instance.new("ImageButton")      --誰是殺手
-local script5 = Instance.new("ImageButton")      --時髦星期五
-local script6 = Instance.new("ImageButton")      --arsenal
 
 --Version:
 VersionGUI = "GUI v1.2.1"
@@ -296,6 +290,14 @@ SettingMenu.Visible = false
 SettingCorner.Parent = SettingMenu
 
 -------- script-------------------- script-------------------- script-------------------- script-------------------- script------------
+local script1 = Instance.new("ImageButton")      --Roblox Studio
+local script2 = Instance.new("ImageButton")      --BedWars
+local script3 = Instance.new("ImageButton")      --監獄人生
+local script4 = Instance.new("ImageButton")      --Vans World
+local script5 = Instance.new("ImageButton")      --誰是殺手
+local script6 = Instance.new("ImageButton")      --時髦星期五
+local script7 = Instance.new("ImageButton")      --arsenal
+
 GameMenu.Name = "GameMenu"
 GameMenu.Parent = GUIMenu
 GameMenu.Active = true
@@ -303,36 +305,106 @@ GameMenu.BackgroundColor3 = Color3.fromRGB(90, 99, 99)
 GameMenu.Position = UDim2.new(0.0172344893, 0, 0.20364742, 0)
 GameMenu.Size = UDim2.new(0, 559, 0, 249)
 
+--Roblox Studio
+script1.Name = "script1"
+script1.Parent = game.StarterGui.GameGUI.GUIMenu.GameMenu
+script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script1.Size = UDim2.new(0, 100, 0, 100)
+script1.Image = "http://www.roblox.com/asset/?id=5150434563"
+script1.MouseButton1Down:connect(function()
+	if game:GetService'CoreGui':FindFirstChild'Dex' then
+		game:GetService'CoreGui'.Dex:Destroy();
+	end
+
+	math.randomseed(tick())
+
+	local charset = {}
+	for i = 48,  57 do table.insert(charset, string.char(i)) end
+	for i = 65,  90 do table.insert(charset, string.char(i)) end
+	for i = 97, 122 do table.insert(charset, string.char(i)) end
+	function RandomCharacters(length)
+		if length > 0 then
+			return RandomCharacters(length - 1) .. charset[math.random(1, #charset)]
+		else
+			return ""
+		end
+	end
+
+	local Dex = game:GetObjects("rbxassetid://3567096419")[1]
+	Dex.Name = RandomCharacters(math.random(5, 20))
+	Dex.Parent = game:GetService("CoreGui")
+
+	local function Load(Obj, Url)
+		local function GiveOwnGlobals(Func, Script)
+			local Fenv = {}
+			local RealFenv = {script = Script}
+			local FenvMt = {}
+			FenvMt.__index = function(a,b)
+				if RealFenv[b] == nil then
+					return getfenv()[b]
+				else
+					return RealFenv[b]
+				end
+			end
+			FenvMt.__newindex = function(a, b, c)
+				if RealFenv[b] == nil then
+					getfenv()[b] = c
+				else
+					RealFenv[b] = c
+				end
+			end
+			setmetatable(Fenv, FenvMt)
+			setfenv(Func, Fenv)
+			return Func
+		end
+
+		local function LoadScripts(Script)
+			if Script.ClassName == "Script" or Script.ClassName == "LocalScript" then
+				spawn(function()
+					GiveOwnGlobals(loadstring(Script.Source, "=" .. Script:GetFullName()), Script)()
+				end)
+			end
+			for i,v in pairs(Script:GetChildren()) do
+				LoadScripts(v)
+			end
+		end
+
+		LoadScripts(Obj)
+	end
+
+	Load(Dex)
+end)
+
 
 --BedWars
-script1.Name = "script1"
-script1.Parent = GameMenu
-script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-script1.Position = UDim2.new(0.021, 0, 0, 0)
-script1.Size = UDim2.new(0, 100, 0, 100)
-script1.Image = "http://www.roblox.com/asset/?id=7997842374"
-script1.MouseButton1Down:connect(function()
+script2.Name = "script2"
+script2.Parent = GameMenu
+script2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script2.Position = UDim2.new(0.021, 0, 0, 0)
+script2.Size = UDim2.new(0, 100, 0, 100)
+script2.Image = "http://www.roblox.com/asset/?id=7997842374"
+script2.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
 
 --監獄人生
-script2.Name = "script2"
-script2.Parent = GameMenu
-script2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-script2.Position = UDim2.new(0.238, 0, 0, 0)
-script2.Size = UDim2.new(0, 100, 0, 100)
-script2.Image = "http://www.roblox.com/asset/?id=8000230044"
-script2.MouseButton1Down:connect(function()
+script3.Name = "script3"
+script3.Parent = GameMenu
+script3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script3.Position = UDim2.new(0.238, 0, 0, 0)
+script3.Size = UDim2.new(0, 100, 0, 100)
+script3.Image = "http://www.roblox.com/asset/?id=8000230044"
+script3.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/eqL5LdQQ", true))()
 end)
 
 --Vans World
-script3.Name = "script3"
-script3.Parent = GameMenu
-script3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-script3.Size = UDim2.new(0, 100, 0, 100)
-script3.Image = "http://www.roblox.com/asset/?id=8000901170"
-script3.MouseButton1Down:connect(function()
+script4.Name = "script4"
+script4.Parent = GameMenu
+script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script4.Size = UDim2.new(0, 100, 0, 100)
+script4.Image = "http://www.roblox.com/asset/?id=8000901170"
+script4.MouseButton1Down:connect(function()
 	_G.coinfarm = true
 	while _G.coinfarm do
 		local CoinLocations = game:GetService("Workspace").CoinLocations:GetChildren()
@@ -353,12 +425,12 @@ script3.MouseButton1Down:connect(function()
 end)
 
 --誰是殺手
-script4.Name = "script4"
-script4.Parent = GameMenu
-script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-script4.Size = UDim2.new(0, 100, 0, 100)
-script4.Image = "http://www.roblox.com/asset/?id=8005573834"
-script4.MouseButton1Down:connect(function()
+script6.Name = "script6"
+script6.Parent = GameMenu
+script6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script6.Size = UDim2.new(0, 100, 0, 100)
+script6.Image = "http://www.roblox.com/asset/?id=8005573834"
+script6.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
 end)
 
@@ -373,18 +445,18 @@ script5.MouseButton1Down:connect(function()
 end)
 
 --arsenal
-script6.Name = "script6"
-script6.Parent = GameMenu
-script6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-script6.Size = UDim2.new(0, 100, 0, 100)
-script6.Image = "http://www.roblox.com/asset/?id=7699371504"
-script6.MouseButton1Down:connect(function()
+script7.Name = "script7"
+script7.Parent = GameMenu
+script7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script7.Size = UDim2.new(0, 100, 0, 100)
+script7.Image = "http://www.roblox.com/asset/?id=7699371504"
+script7.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
 end)
 
 --自動排版
 GameUIGridLayout.Parent = GameMenu
-GameUIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+GameUIGridLayout.SortOrder = Enum.SortOrder.Name
 GameUIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
 GameUIGridLayout.CellSize = UDim2.new(0, 120, 0, 120)
 
