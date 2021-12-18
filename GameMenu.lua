@@ -28,7 +28,7 @@ local script5 = Instance.new("ImageButton")      --時髦星期五
 local script6 = Instance.new("ImageButton")      --arsenal
 
 --Version:
-VersionGUI = "GUI v1.2.0"
+VersionGUI = "GUI v1.2.1"
 
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
