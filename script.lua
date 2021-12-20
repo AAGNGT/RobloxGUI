@@ -114,6 +114,10 @@ PassBtn.MouseButton1Click:connect(function()
 		PassBox_2.Text == "AAGNGT" then
 		PassBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 		Sound:Play()
+		wait(1)
+		PasswordFrame:TweenPosition(
+			UDim2.new(0.384, 0, -1, 0)
+		)
 	else
 		Sound:Play()
 		PassBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
