@@ -22,7 +22,7 @@ local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 
 --Version:
-VersionGUI = "GUI v1.2.2"
+VersionGUI = "GUI v1.2.3"
 
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
