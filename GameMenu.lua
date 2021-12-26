@@ -6,7 +6,6 @@ local VersionUICorner = Instance.new("UICorner")--Version外圈圓形
 local SettingCorner = Instance.new("UICorner")  --設置圓形
 local VersionText = Instance.new("TextLabel")   --版本Text
 local icon = Instance.new("ImageLabel")         --icon
-local Black = Instance.new("Frame")             --護眼畫面
 
 local exit = Instance.new("TextButton")          --離開主選單exit
 local Closure = Instance.new("TextButton")       --關閉主選單Closure
@@ -56,13 +55,6 @@ GUIMenu.Size = UDim2.new(0, 584, 0, 329)
 GUIMenu.Visible = false
 GUIMenu.Active = true
 GUIMenu.Draggable = true
-
---護眼畫面
-Black.Parent = ScreenGui
-Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Black.BackgroundTransparency = 1
-Black.Size = UDim2.new(1, 0, 1, 0)
-Black.ZIndex = 0
 
 --GUI圈圓形
 GUIUICorner.Parent = GUIMenu
@@ -177,9 +169,16 @@ SettingMenu.Size = UDim2.new(0, 226, 0, 323)
 SettingMenu.Visible = false
 
 SettingCorner.Parent = SettingMenu
+--護眼畫面
+local TextLabel = Instance.new("TextLabel")    
+local TextButton = Instance.new("TextButton")  
+local Black = Instance.new("Frame")             
 
-local TextLabel = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
+Black.Parent = ScreenGui
+Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Black.BackgroundTransparency = 1
+Black.Size = UDim2.new(1, 0, 1, 0)
+Black.ZIndex = 0
 
 TextLabel.Parent = SettingMenu
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
