@@ -21,6 +21,8 @@ local Script = Instance.new("ImageButton")       --go script
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 
+local number = Instance.new("TextLabel")         --GUI編號
+
 --Version:
 VersionGUI = "GUI v1.2.4"
 
@@ -31,6 +33,19 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.IgnoreGuiInset = true
 ScreenGui.Name = "ScreenGui " ..tostring
 print(tostring)
+
+--number
+number.Name = "number"
+number.Parent = VersionText
+number.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+number.BackgroundTransparency = 1.000
+number.Position = UDim2.new(0.178, 0, 0.385, 0)
+number.Size = UDim2.new(0, 92, 0, 39)
+number.Font = Enum.Font.SourceSansBold
+number.Text = "number : " ..tostring
+number.TextColor3 = Color3.fromRGB(255, 255, 0)
+number.TextSize = 18
+number.TextWrapped = true
 
 --主畫面--
 GUIMenu.Name = "GUIMenu"
