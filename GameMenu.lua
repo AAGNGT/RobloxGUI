@@ -146,7 +146,7 @@ resetBtn.MouseButton1Click:connect(function()
 
 end)
 
---設定menu------------設定menu---------設定menu---------設定menu------
+------設定menu------------設定menu---------設定menu---------設定menu------
 
 --設置按鈕
 settingBtn.Name = "settingBtn"
@@ -169,6 +169,7 @@ SettingMenu.Size = UDim2.new(0, 226, 0, 323)
 SettingMenu.Visible = false
 
 SettingCorner.Parent = SettingMenu
+
 --護眼畫面
 local TextLabel = Instance.new("TextLabel")    
 local TextButton = Instance.new("TextButton")  

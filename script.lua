@@ -51,6 +51,7 @@ exit.MouseButton1Click:connect(function()
 		UDim2.new(0.384, 0, -1, 0)
 	)
 	Sound:Play()
+	ScreenGui:Destroy()
 end)
 
 UICorner_3.Parent = exit
