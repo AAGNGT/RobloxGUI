@@ -24,7 +24,7 @@ local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 local number = Instance.new("TextLabel")         --GUI編號
 
 --Version:
-VersionGUI = "GUI v1.2.4"
+VersionGUI = "GUI v1.2.6"
 
 local tostring = tostring(math.random(1, 100))
 --ScreenGui:
@@ -64,61 +64,6 @@ Black.BackgroundTransparency = 1
 Black.Size = UDim2.new(1, 0, 1, 0)
 Black.ZIndex = 0
 
-local TextLabel = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
-
-TextLabel.Parent = SettingMenu
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.035, 0, 0.043, 0)
-TextLabel.Size = UDim2.new(0, 173, 0, 47)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Eye protection"
-TextLabel.TextColor3 = Color3.fromRGB(190, 190, 190)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-TextButton.Parent = SettingMenu
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TextButton.Position = UDim2.new(0.827, 0, 0.068, 0)
-TextButton.Size = UDim2.new(0, 30, 0, 30)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = ""
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
-TextButton.MouseButton1Click:connect(function()
-	if TextButton.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then 
-		TextButton.Visible = false
-		wait(0.2)
-		Black.BackgroundTransparency = 0.90
-		wait(0.2)
-		Black.BackgroundTransparency = 0.80
-		wait(0.2)
-		Black.BackgroundTransparency = 0.70
-		wait(0.2)
-		Black.BackgroundTransparency = 0.65
-		wait(0.2)
-		Black.BackgroundTransparency = 0.57
-		TextButton.Visible = true
-		TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-	else
-		TextButton.Visible = false
-		Black.BackgroundTransparency = 0.65
-		wait(0.2)
-		Black.BackgroundTransparency = 0.70
-		wait(0.2)
-		Black.BackgroundTransparency = 0.80
-		wait(0.2)
-		Black.BackgroundTransparency = 0.90
-		wait(0.2)
-		Black.BackgroundTransparency = 1
-		TextButton.Visible = true
-		TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	end	
-end)
-
-
 --GUI圈圓形
 GUIUICorner.Parent = GUIMenu
 
@@ -129,8 +74,7 @@ VersionText.Size = UDim2.new(0, 584, 0, 52)
 VersionText.Font = Enum.Font.SourceSans
 VersionText.Text = VersionGUI                    --------GUI--------
 VersionText.TextColor3 = Color3.fromRGB(0, 0, 0)
-VersionText.TextScaled = true
-VersionText.TextSize = 14.000
+VersionText.TextSize = 50
 VersionText.TextWrapped = true
 
 --Version外圈圓形
@@ -210,77 +154,7 @@ resetBtn.MouseButton1Click:connect(function()
 
 end)
 
---離開主選單exit
-exit.Name = "exit"
-exit.Parent = GUIMenu
-exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-exit.Position = UDim2.new(0.915072918, 0, 0.0257846415, 0)
-exit.Size = UDim2.new(0, 35, 0, 35)
-exit.Font = Enum.Font.SourceSans
-exit.Text = "X"
-exit.TextColor3 = Color3.fromRGB(0, 0, 0)
-exit.TextScaled = true
-exit.TextSize = 14.000
-exit.TextWrapped = true
-exit.MouseButton1Down:connect(function()
-
-	iconOPEN.Visible = false
-
-	GUIMenu:TweenPosition(
-		UDim2.new(0.282, 0, -0.517, 0)
-	)
-	Black:TweenPosition(
-		UDim2.new(0, 0,-1, 0)
-	)
-	wait(0.5)
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
-	Notify("Leave GUI","Bye", 4)
-
-	ScreenGui:Destroy()
-end)
-
---關閉主選單Closure
-Closure.Name = "Closure"
-Closure.Parent = GUIMenu
-Closure.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
-Closure.Position = UDim2.new(0.837328792, 0, 0.0243161097, 0)
-Closure.Size = UDim2.new(0, 35, 0, 35)
-Closure.Font = Enum.Font.SourceSans
-Closure.Text = "-"
-Closure.TextColor3 = Color3.fromRGB(0, 0, 0)
-Closure.TextSize = 71.000
-Closure.TextWrapped = true
-Closure.MouseButton1Down:connect(function()
-
-	GUIMenu:TweenPosition(
-		UDim2.new(0.282, 0, -0.517, 0)
-	)
-
-	wait(0.9)
-	iconOPEN.Visible = true
-	GUIMenu.Visible = false
-end)
-
---開啟主選單
-iconOPEN.Name = "iconOPEN"
-iconOPEN.Parent = ScreenGui
-iconOPEN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-iconOPEN.BorderSizePixel = 0
-iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
-iconOPEN.Size = UDim2.new(0, 100, 0, 100)
-iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
-iconOPEN.BackgroundTransparency = 1
-iconOPEN.MouseButton1Click:connect(function()
-
-	GUIMenu:TweenPosition(
-		UDim2.new(0.282, 0, 0.432, 0)
-	)
-
-
-	GUIMenu.Visible = true
-	iconOPEN.Visible = false
-end)
+--設定menu------------設定menu---------設定menu---------設定menu------
 
 --設置按鈕
 settingBtn.Name = "settingBtn"
@@ -303,6 +177,193 @@ SettingMenu.Size = UDim2.new(0, 226, 0, 323)
 SettingMenu.Visible = false
 
 SettingCorner.Parent = SettingMenu
+
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+
+TextLabel.Parent = SettingMenu
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.035, 0, 0.043, 0)
+TextLabel.Size = UDim2.new(0, 173, 0, 47)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Eye protection"
+TextLabel.TextColor3 = Color3.fromRGB(190, 190, 190)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextButton.Parent = SettingMenu
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.Position = UDim2.new(0.827, 0, 0.068, 0)
+TextButton.Size = UDim2.new(0, 30, 0, 30)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Click:connect(function()
+	if TextButton.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then 
+		TextButton.Visible = false
+		wait(0.2)
+		Black.BackgroundTransparency = 0.90
+		wait(0.2)
+		Black.BackgroundTransparency = 0.80
+		wait(0.2)
+		Black.BackgroundTransparency = 0.70
+		wait(0.2)
+		Black.BackgroundTransparency = 0.65
+		wait(0.2)
+		Black.BackgroundTransparency = 0.57
+		TextButton.Visible = true
+		TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+	else
+		TextButton.Visible = false
+		Black.BackgroundTransparency = 0.65
+		wait(0.2)
+		Black.BackgroundTransparency = 0.70
+		wait(0.2)
+		Black.BackgroundTransparency = 0.80
+		wait(0.2)
+		Black.BackgroundTransparency = 0.90
+		wait(0.2)
+		Black.BackgroundTransparency = 1
+		TextButton.Visible = true
+		TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end	
+end)
+
+--模糊畫面--
+local TextLabel_2 = Instance.new("TextLabel")
+local TextButton_2 = Instance.new("TextButton")
+local Blur = Instance.new("BlurEffect")
+
+Blur.Parent = game.Lighting
+Blur.Enabled = true
+Blur.Size = 0
+
+TextLabel_2.Parent = SettingMenu
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.035, 0, 0.192, 0)
+TextLabel_2.Size = UDim2.new(0, 173, 0, 47)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Blurred picture"
+TextLabel_2.TextColor3 = Color3.fromRGB(190, 190, 190)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextButton_2.Parent = SettingMenu
+TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+TextButton_2.Position = UDim2.new(0.827, 0, 0.22, 0)
+TextButton_2.Size = UDim2.new(0, 30, 0, 30)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = ""
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 14.000
+TextButton_2.MouseButton1Click:connect(function()
+	if Blur.Enabled == true then 
+		Blur.Enabled = false
+		TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	else
+		Blur.Enabled = true
+		TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+	end	
+end)
+
+--開啟關閉按鈕-------開啟關閉按鈕------開啟關閉按鈕-----開啟關閉按鈕-----
+
+--開啟主選單
+iconOPEN.Name = "iconOPEN"
+iconOPEN.Parent = ScreenGui
+iconOPEN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+iconOPEN.BorderSizePixel = 0
+iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
+iconOPEN.Size = UDim2.new(0, 100, 0, 100)
+iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
+iconOPEN.BackgroundTransparency = 1
+iconOPEN.MouseButton1Click:connect(function()
+
+	GUIMenu:TweenPosition(
+		UDim2.new(0.282, 0, 0.432, 0)
+	)
+
+	Blur.Size = 24
+
+	GUIMenu.Visible = true
+	iconOPEN.Visible = false
+end)
+
+--關閉主選單Closure
+Closure.Name = "Closure"
+Closure.Parent = GUIMenu
+Closure.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
+Closure.Position = UDim2.new(0.837328792, 0, 0.0243161097, 0)
+Closure.Size = UDim2.new(0, 35, 0, 35)
+Closure.Font = Enum.Font.SourceSans
+Closure.Text = "-"
+Closure.TextColor3 = Color3.fromRGB(0, 0, 0)
+Closure.TextSize = 71.000
+Closure.TextWrapped = true
+Closure.MouseButton1Down:connect(function()
+
+	GUIMenu:TweenPosition(
+		UDim2.new(0.282, 0, -0.517, 0)
+	)
+
+	Blur.Size = 24
+	wait(0.2)
+	Blur.Size = 15
+	wait(0.2)
+	Blur.Size = 9
+	wait(0.2)
+	Blur.Size = 3
+	wait(0.2)
+	Blur.Size = 0
+
+	iconOPEN.Visible = true
+	GUIMenu.Visible = false
+end)
+
+--離開主選單exit
+exit.Name = "exit"
+exit.Parent = GUIMenu
+exit.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+exit.Position = UDim2.new(0.915072918, 0, 0.0257846415, 0)
+exit.Size = UDim2.new(0, 35, 0, 35)
+exit.Font = Enum.Font.SourceSans
+exit.Text = "X"
+exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+exit.TextScaled = true
+exit.TextSize = 14.000
+exit.TextWrapped = true
+exit.MouseButton1Down:connect(function()
+
+	iconOPEN.Visible = false
+
+	GUIMenu:TweenPosition(
+		UDim2.new(0.282, 0, -0.517, 0)
+	)
+	Black:TweenPosition(
+		UDim2.new(0, 0,-1, 0)
+	)
+
+	Blur.Size = 24
+	wait(0.2)
+	Blur.Size = 15
+	wait(0.2)
+	Blur.Size = 9
+	wait(0.2)
+	Blur.Size = 3
+	wait(0.2)
+	Blur.Size = 0
+
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
+
+	Notify("Leave GUI","Bye", 4)
+
+	ScreenGui:Destroy()
+end)
 
 -------- script-------------------- script-------------------- script-------------------- script-------------------- script------------
 local script1 = Instance.new("ImageButton")      --Roblox Studio
