@@ -22,12 +22,15 @@ local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 
 --Version:
-VersionGUI = "GUI v1.2.3"
+VersionGUI = "GUI v1.2.4"
 
+local tostring = tostring(math.random(1, 100))
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.IgnoreGuiInset = true
+ScreenGui.Name = "ScreenGui " ..tostring
+print(tostring)
 
 --主畫面--
 GUIMenu.Name = "GUIMenu"
@@ -178,7 +181,7 @@ resetBtn.MouseButton1Click:connect(function()
 		ResetText.Text = "Resetting..."
 		wait(0.2)
 	end
-	
+
 	Black:TweenPosition(
 		UDim2.new(0, 0,-1, 0)
 	)
@@ -219,10 +222,7 @@ exit.MouseButton1Down:connect(function()
 
 	Notify("Leave GUI","Bye", 4)
 
-
-
-	GUIMenu.Visible = false
-	Black.Visible = false
+	ScreenGui:Destroy()
 end)
 
 --關閉主選單Closure
