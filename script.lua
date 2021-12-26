@@ -51,7 +51,7 @@ exit.MouseButton1Click:connect(function()
 		UDim2.new(0.384, 0, -1, 0)
 	)
 	Sound:Play()
-	ScreenGui:Destroy()
+	ScriptGUI:Destroy()
 end)
 
 UICorner_3.Parent = exit
@@ -119,6 +119,7 @@ PassBtn.MouseButton1Click:connect(function()
 		PasswordFrame:TweenPosition(
 			UDim2.new(0.384, 0, -1, 0)
 		)
+		ScriptGUI:Destroy()
 	else
 		Sound:Play()
 		PassBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
