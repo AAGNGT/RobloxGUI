@@ -26,7 +26,7 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --Version:
-VersionGUI = "GUI v1.2.6"
+VersionGUI = "GUI v1.2.7"
 
 local tostring = tostring(math.random(1, 100))
 --ScreenGui:
@@ -34,7 +34,7 @@ ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.IgnoreGuiInset = true
 ScreenGui.Name = "ScreenGui " ..tostring
-print(ScreenGui ,tostring)
+print(ScreenGui)
 
 --Number
 number.Name = "Number"
