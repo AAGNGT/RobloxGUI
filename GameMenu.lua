@@ -385,6 +385,7 @@ local script4 = Instance.new("ImageButton")      --Vans World
 local script5 = Instance.new("ImageButton")      --誰是殺手
 local script6 = Instance.new("ImageButton")      --時髦星期五
 local script7 = Instance.new("ImageButton")      --arsenal
+local script8 = Instance.new("ImageButton")      --史詩級小遊戲
 
 GameMenu.Name = "GameMenu"
 GameMenu.Parent = GUIMenu
@@ -555,6 +556,19 @@ script7.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
 end)
 
+--史詩級小遊戲
+script8.Name = "script8"
+script8.Parent = GameMenu
+script8.ImageTransparency = 0.4
+script8.AutoButtonColor = false
+script8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script8.Position = UDim2.new(0.021, 0, 0, 0)
+script8.Size = UDim2.new(0, 100, 0, 100)
+script8.Image = "http://www.roblox.com/asset/?id=8383643615"
+script8.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Epic%20Minigames/EpicMinigamesGUI"))()
+end)
+
 --自動排版
 GameUIGridLayout.Parent = GameMenu
 GameUIGridLayout.SortOrder = Enum.SortOrder.Name
@@ -608,6 +622,13 @@ script7.MouseEnter:Connect(function()
 end)
 script7.MouseLeave:Connect(function()
 	script7.ImageTransparency = 0.4
+end)
+
+script8.MouseEnter:Connect(function()
+	script8.ImageTransparency = 0
+end)
+script8.MouseLeave:Connect(function()
+	script8.ImageTransparency = 0.4
 end)
 
 resetBtn.MouseEnter:Connect(function()
