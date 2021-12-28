@@ -85,7 +85,7 @@ icon.Image = "http://www.roblox.com/asset/?id=7755851043"
 --go script
 goScript.Name = "GoScript"
 goScript.Parent = GUIMenu
-goScript.ImageTransparency = 0.3
+goScript.ImageTransparency = 0.4
 goScript.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 goScript.BackgroundTransparency = 1.000
 goScript.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
