@@ -15,7 +15,7 @@ ResetText = Instance.new("TextLabel")            --重設Text
 local settingBtn = Instance.new("ImageButton")   --設置按鈕
 local SettingMenu = Instance.new("Frame")        --設置Menu
 
-local Script = Instance.new("ImageButton")       --go script 
+local goScript = Instance.new("ImageButton")       --go script 
 
 local GameMenu = Instance.new("ScrollingFrame")  --腳本畫面
 local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
@@ -83,15 +83,23 @@ icon.Size = UDim2.new(0, 44, 0, 44)
 icon.Image = "http://www.roblox.com/asset/?id=7755851043"
 
 --go script
-Script.Name = "Script"
-Script.Parent = GUIMenu
-Script.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Script.BackgroundTransparency = 1.000
-Script.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
-Script.Size = UDim2.new(0, 50, 0, 50)
-Script.Image = "rbxassetid://8278845824"
-Script.MouseButton1Click:connect(function()
+goScript.Name = "GoScript"
+goScript.Parent = GUIMenu
+goScript.ImageTransparency = 0.3
+goScript.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+goScript.BackgroundTransparency = 1.000
+goScript.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
+goScript.Size = UDim2.new(0, 50, 0, 50)
+goScript.Image = "rbxassetid://8278845824"
+goScript.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
+end)
+
+goScript.MouseEnter:Connect(function()
+	goScript.ImageTransparency = 0
+end)
+goScript.MouseLeave:Connect(function()
+	goScript.ImageTransparency = 0.4
 end)
 
 --重設Text
@@ -112,6 +120,7 @@ ResetText.Visible = false
 --重設按鈕
 resetBtn.Name = "resetBtn"
 resetBtn.Parent = GUIMenu
+resetBtn.ImageTransparency = 0.3
 resetBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 resetBtn.BackgroundTransparency = 1.000
 resetBtn.Position = UDim2.new(0.682, 0, 0.01, 0)
@@ -155,6 +164,7 @@ end)
 --設置按鈕
 settingBtn.Name = "settingBtn"
 settingBtn.Parent = GUIMenu
+settingBtn.ImageTransparency = 0.3
 settingBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 settingBtn.BackgroundTransparency = 1.000
 settingBtn.Position = UDim2.new(0.760273993, 0, 0.00911856815, 0)
@@ -386,6 +396,8 @@ GameMenu.Size = UDim2.new(0, 559, 0, 249)
 --Roblox Studio
 script1.Name = "script1"
 script1.Parent = GameMenu
+script1.ImageTransparency = 0.4
+script1.AutoButtonColor = false
 script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script1.Size = UDim2.new(0, 100, 0, 100)
 script1.Image = "http://www.roblox.com/asset/?id=5150434563"
@@ -457,6 +469,8 @@ end)
 --BedWars
 script2.Name = "script2"
 script2.Parent = GameMenu
+script2.ImageTransparency = 0.4
+script2.AutoButtonColor = false
 script2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script2.Position = UDim2.new(0.021, 0, 0, 0)
 script2.Size = UDim2.new(0, 100, 0, 100)
@@ -468,6 +482,8 @@ end)
 --監獄人生
 script3.Name = "script3"
 script3.Parent = GameMenu
+script3.ImageTransparency = 0.4
+script3.AutoButtonColor = false
 script3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script3.Position = UDim2.new(0.238, 0, 0, 0)
 script3.Size = UDim2.new(0, 100, 0, 100)
@@ -478,7 +494,8 @@ end)
 
 --Vans World
 script4.Name = "script4"
-script4.Parent = GameMenu
+script4.ImageTransparency = 0.4
+script4.AutoButtonColor = false
 script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script4.Size = UDim2.new(0, 100, 0, 100)
 script4.Image = "http://www.roblox.com/asset/?id=8000901170"
@@ -505,6 +522,8 @@ end)
 --誰是殺手
 script6.Name = "script6"
 script6.Parent = GameMenu
+script6.ImageTransparency = 0.4
+script6.AutoButtonColor = false
 script6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script6.Size = UDim2.new(0, 100, 0, 100)
 script6.Image = "http://www.roblox.com/asset/?id=8005573834"
@@ -515,6 +534,8 @@ end)
 --時髦星期五
 script5.Name = "script5"
 script5.Parent = GameMenu
+script5.ImageTransparency = 0.4
+script5.AutoButtonColor = false
 script5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script5.Size = UDim2.new(0, 100, 0, 100)
 script5.Image = "http://www.roblox.com/asset/?id=8032189927"
@@ -525,6 +546,8 @@ end)
 --arsenal
 script7.Name = "script7"
 script7.Parent = GameMenu
+script7.ImageTransparency = 0.4
+script7.AutoButtonColor = false
 script7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script7.Size = UDim2.new(0, 100, 0, 100)
 script7.Image = "http://www.roblox.com/asset/?id=7699371504"
@@ -538,7 +561,71 @@ GameUIGridLayout.SortOrder = Enum.SortOrder.Name
 GameUIGridLayout.CellPadding = UDim2.new(0, 20, 0, 20)
 GameUIGridLayout.CellSize = UDim2.new(0, 120, 0, 120)
 
+script1.MouseEnter:Connect(function()
+	script1.ImageTransparency = 0
+end)
+script1.MouseLeave:Connect(function()
+	script1.ImageTransparency = 0.4
+end)
+
+script2.MouseEnter:Connect(function()
+	script2.ImageTransparency = 0
+end)
+script2.MouseLeave:Connect(function()
+	script2.ImageTransparency = 0.4
+end)
+
+script3.MouseEnter:Connect(function()
+	script3.ImageTransparency = 0
+end)
+script3.MouseLeave:Connect(function()
+	script3.ImageTransparency = 0.4
+end)
+
+script4.MouseEnter:Connect(function()
+	script4.ImageTransparency = 0
+end)
+script4.MouseLeave:Connect(function()
+	script4.ImageTransparency = 0.4
+end)
+
+script5.MouseEnter:Connect(function()
+	script5.ImageTransparency = 0
+end)
+script5.MouseLeave:Connect(function()
+	script5.ImageTransparency = 0.4
+end)
+
+script6.MouseEnter:Connect(function()
+	script6.ImageTransparency = 0
+end)
+script6.MouseLeave:Connect(function()
+	script6.ImageTransparency = 0.4
+end)
+
+script7.MouseEnter:Connect(function()
+	script7.ImageTransparency = 0
+end)
+script7.MouseLeave:Connect(function()
+	script7.ImageTransparency = 0.4
+end)
+
+resetBtn.MouseEnter:Connect(function()
+	resetBtn.ImageTransparency = 0
+end)
+resetBtn.MouseLeave:Connect(function()
+	resetBtn.ImageTransparency = 0.3
+end)
+
+settingBtn.MouseEnter:Connect(function()
+	settingBtn.ImageTransparency = 0
+end)
+settingBtn.MouseLeave:Connect(function()
+	settingBtn.ImageTransparency = 0.3
+end)
+
+
+
 --loading say hi
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
 Notify("Join GUI","Hi", 4)
