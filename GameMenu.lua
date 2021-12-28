@@ -22,6 +22,9 @@ local GameUIGridLayout = Instance.new("UIGridLayout")--自動排版
 
 local number = Instance.new("TextLabel")         --GUI編號
 
+local Blur = Instance.new("BlurEffect")
+local Black = Instance.new("Frame")  
+
 --Version:
 VersionGUI = "GUI v1.2.6"
 
@@ -31,17 +34,17 @@ ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.IgnoreGuiInset = true
 ScreenGui.Name = "ScreenGui " ..tostring
-print(tostring)
+print(ScreenGui ,tostring)
 
---number
-number.Name = "number"
+--Number
+number.Name = "Number"
 number.Parent = VersionText
 number.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 number.BackgroundTransparency = 1.000
 number.Position = UDim2.new(0.178, 0, 0.385, 0)
 number.Size = UDim2.new(0, 92, 0, 39)
 number.Font = Enum.Font.SourceSansBold
-number.Text = "number : " ..tostring
+number.Text = "Number : " ..tostring
 number.TextColor3 = Color3.fromRGB(255, 255, 0)
 number.TextSize = 18
 number.TextWrapped = true
@@ -118,6 +121,7 @@ resetBtn.MouseButton1Click:connect(function()
 
 	GUIMenu.Visible = false
 	iconOPEN.Visible = false
+	Blur.Size = 0
 
 	ResetText.Visible = true
 
@@ -143,7 +147,7 @@ resetBtn.MouseButton1Click:connect(function()
 	ResetText.Text = "Please reload the script"
 	wait(3)
 	ResetText.Visible = false
-
+	ScreenGui:Destroy()
 end)
 
 ------設定menu------------設定menu---------設定menu---------設定menu------
@@ -172,8 +176,7 @@ SettingCorner.Parent = SettingMenu
 
 --護眼畫面
 local TextLabel = Instance.new("TextLabel")    
-local TextButton = Instance.new("TextButton")  
-local Black = Instance.new("Frame")             
+local TextButton = Instance.new("TextButton")             
 
 Black.Parent = ScreenGui
 Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -235,7 +238,6 @@ end)
 --模糊畫面--
 local TextLabel_2 = Instance.new("TextLabel")
 local TextButton_2 = Instance.new("TextButton")
-local Blur = Instance.new("BlurEffect")
 
 Blur.Parent = game.Lighting
 Blur.Enabled = true
