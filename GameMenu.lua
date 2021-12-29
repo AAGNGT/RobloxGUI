@@ -91,7 +91,7 @@ goScript.BackgroundTransparency = 1.000
 goScript.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
 goScript.Size = UDim2.new(0, 50, 0, 50)
 goScript.Image = "rbxassetid://8278845824"
-goScript.MouseButton1Down:connect(function()
+goScript.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
 end)
 
@@ -235,7 +235,7 @@ TextButton.Font = Enum.Font.SourceSans
 TextButton.Text = ""
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
-TextButton.MouseButton1Down:connect(function()
+TextButton.MouseButton1Click:connect(function()
 	if TextButton.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then 
 		TextButton.Visible = false
 		wait(0.2)
@@ -294,7 +294,7 @@ TextButton_2.Font = Enum.Font.SourceSans
 TextButton_2.Text = ""
 TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.TextSize = 14.000
-TextButton_2.MouseButton1Down:connect(function()
+TextButton_2.MouseButton1Click:connect(function()
 	if Blur.Enabled == true then 
 		Blur.Enabled = false
 		TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -315,7 +315,7 @@ iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
 iconOPEN.Size = UDim2.new(0, 100, 0, 100)
 iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
 iconOPEN.BackgroundTransparency = 1
-iconOPEN.MouseButton1Down:connect(function()
+iconOPEN.MouseButton1Click:connect(function()
 
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, 0.432, 0)
@@ -338,7 +338,7 @@ Closure.Text = "-"
 Closure.TextColor3 = Color3.fromRGB(0, 0, 0)
 Closure.TextSize = 71.000
 Closure.TextWrapped = true
-Closure.MouseButton1Down:connect(function()
+Closure.MouseButton1Click:connect(function()
 
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, -0.517, 0)
@@ -370,7 +370,7 @@ exit.TextColor3 = Color3.fromRGB(0, 0, 0)
 exit.TextScaled = true
 exit.TextSize = 14.000
 exit.TextWrapped = true
-exit.MouseButton1Down:connect(function()
+exit.MouseButton1Click:connect(function()
 
 	iconOPEN.Visible = false
 
@@ -423,7 +423,7 @@ script1.AutoButtonColor = false
 script1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script1.Size = UDim2.new(0, 100, 0, 100)
 script1.Image = "http://www.roblox.com/asset/?id=5150434563"
-script1.MouseButton1Down:connect(function()
+script1.MouseButton1Click:connect(function()
 	if game:GetService'CoreGui':FindFirstChild'Dex' then
 		game:GetService'CoreGui'.Dex:Destroy();
 	end
@@ -497,7 +497,7 @@ script2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script2.Position = UDim2.new(0.021, 0, 0, 0)
 script2.Size = UDim2.new(0, 100, 0, 100)
 script2.Image = "http://www.roblox.com/asset/?id=7997842374"
-script2.MouseButton1Down:connect(function()
+script2.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end)
 
@@ -510,7 +510,7 @@ script3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script3.Position = UDim2.new(0.238, 0, 0, 0)
 script3.Size = UDim2.new(0, 100, 0, 100)
 script3.Image = "http://www.roblox.com/asset/?id=8000230044"
-script3.MouseButton1Down:connect(function()
+script3.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/eqL5LdQQ", true))()
 end)
 
@@ -521,7 +521,7 @@ script4.AutoButtonColor = false
 script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script4.Size = UDim2.new(0, 100, 0, 100)
 script4.Image = "http://www.roblox.com/asset/?id=8000901170"
-script4.MouseButton1Down:connect(function()
+script4.MouseButton1Click:connect(function()
 	_G.coinfarm = true
 	while _G.coinfarm do
 		local CoinLocations = game:GetService("Workspace").CoinLocations:GetChildren()
@@ -549,7 +549,7 @@ script6.AutoButtonColor = false
 script6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script6.Size = UDim2.new(0, 100, 0, 100)
 script6.Image = "http://www.roblox.com/asset/?id=8005573834"
-script6.MouseButton1Down:connect(function()
+script6.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
 end)
 
@@ -561,7 +561,7 @@ script5.AutoButtonColor = false
 script5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script5.Size = UDim2.new(0, 100, 0, 100)
 script5.Image = "http://www.roblox.com/asset/?id=8032189927"
-script5.MouseButton1Down:connect(function()
+script5.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
 end)
 
@@ -573,7 +573,7 @@ script7.AutoButtonColor = false
 script7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script7.Size = UDim2.new(0, 100, 0, 100)
 script7.Image = "http://www.roblox.com/asset/?id=7699371504"
-script7.MouseButton1Down:connect(function()
+script7.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
 end)
 
@@ -586,7 +586,7 @@ script8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script8.Position = UDim2.new(0.021, 0, 0, 0)
 script8.Size = UDim2.new(0, 100, 0, 100)
 script8.Image = "http://www.roblox.com/asset/?id=8383643615"
-script8.MouseButton1Down:connect(function()
+script8.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Epic%20Minigames/EpicMinigamesGUI"))()
 end)
 
