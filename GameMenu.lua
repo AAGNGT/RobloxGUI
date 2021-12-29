@@ -14,6 +14,7 @@ local resetBtn = Instance.new("ImageButton")     --重設按鈕
 ResetText = Instance.new("TextLabel")            --重設Text
 local settingBtn = Instance.new("ImageButton")   --設置按鈕
 local SettingMenu = Instance.new("Frame")        --設置Menu
+local Sound = Instance.new("Sound")              --Mc Music
 
 local goScript = Instance.new("ImageButton")       --go script 
 
@@ -82,6 +83,10 @@ icon.Position = UDim2.new(0.0172344744, 0, 0.0116799772, 0)
 icon.Size = UDim2.new(0, 44, 0, 44)
 icon.Image = "http://www.roblox.com/asset/?id=7755851043"
 
+Sound.Parent = ScreenGui
+Sound.SoundId = "rbxassetid://535716488"
+Sound.Volume = 5
+
 --go script
 goScript.Name = "GoScript"
 goScript.Parent = GUIMenu
@@ -93,6 +98,7 @@ goScript.Size = UDim2.new(0, 50, 0, 50)
 goScript.Image = "rbxassetid://8278845824"
 goScript.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
+	Sound:Play()
 end)
 
 goScript.MouseEnter:Connect(function()
@@ -127,7 +133,7 @@ resetBtn.Position = UDim2.new(0.682, 0, 0.01, 0)
 resetBtn.Size = UDim2.new(0, 45, 0, 45)
 resetBtn.Image = "rbxassetid://8181273323"
 resetBtn.MouseButton1Click:connect(function()
-
+	Sound:Play()
 	GUIMenu.Visible = false
 	iconOPEN.Visible = false
 	Blur.Size = 0
@@ -172,6 +178,7 @@ settingBtn.Size = UDim2.new(0, 45, 0, 45)
 settingBtn.Image = "rbxassetid://8243379485"
 settingBtn.MouseButton1Click:connect(function()
 	if SettingMenu.Position == UDim2.new(0.604, 0, -0, 0) and SettingMenu.Visible == false then
+		Sound:Play()
 		SettingMenu.Visible = true
 		SettingMenu:TweenPosition(
 			UDim2.new(1.017, 0, 0, 0),
@@ -181,7 +188,7 @@ settingBtn.MouseButton1Click:connect(function()
 			false
 			)
 	else
-		
+		Sound:Play()
 		SettingMenu:TweenPosition(
 			UDim2.new(0.604, 0, -0, 0),
 			"Out",
@@ -237,6 +244,7 @@ TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Click:connect(function()
 	if TextButton.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then 
+		Sound:Play()
 		TextButton.Visible = false
 		wait(0.2)
 		Black.BackgroundTransparency = 0.90
@@ -251,6 +259,7 @@ TextButton.MouseButton1Click:connect(function()
 		TextButton.Visible = true
 		TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 	else
+		Sound:Play()
 		TextButton.Visible = false
 		Black.BackgroundTransparency = 0.65
 		wait(0.2)
@@ -296,9 +305,11 @@ TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.TextSize = 14.000
 TextButton_2.MouseButton1Click:connect(function()
 	if Blur.Enabled == true then 
+		Sound:Play()
 		Blur.Enabled = false
 		TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	else
+		Sound:Play()
 		Blur.Enabled = true
 		TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 	end	
@@ -316,7 +327,7 @@ iconOPEN.Size = UDim2.new(0, 100, 0, 100)
 iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
 iconOPEN.BackgroundTransparency = 1
 iconOPEN.MouseButton1Click:connect(function()
-
+	Sound:Play()
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, 0.432, 0)
 	)
@@ -339,7 +350,7 @@ Closure.TextColor3 = Color3.fromRGB(0, 0, 0)
 Closure.TextSize = 71.000
 Closure.TextWrapped = true
 Closure.MouseButton1Click:connect(function()
-
+	Sound:Play()
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, -0.517, 0)
 	)
@@ -371,7 +382,7 @@ exit.TextScaled = true
 exit.TextSize = 14.000
 exit.TextWrapped = true
 exit.MouseButton1Click:connect(function()
-
+	Sound:Play()
 	iconOPEN.Visible = false
 
 	GUIMenu:TweenPosition(
@@ -425,6 +436,7 @@ script1.Size = UDim2.new(0, 100, 0, 100)
 script1.Image = "http://www.roblox.com/asset/?id=5150434563"
 script1.MouseButton1Click:connect(function()
 	if game:GetService'CoreGui':FindFirstChild'Dex' then
+		Sound:Play()
 		game:GetService'CoreGui'.Dex:Destroy();
 	end
 
@@ -498,7 +510,8 @@ script2.Position = UDim2.new(0.021, 0, 0, 0)
 script2.Size = UDim2.new(0, 100, 0, 100)
 script2.Image = "http://www.roblox.com/asset/?id=7997842374"
 script2.MouseButton1Click:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+	Sound:Play()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()	
 end)
 
 --監獄人生
@@ -511,6 +524,7 @@ script3.Position = UDim2.new(0.238, 0, 0, 0)
 script3.Size = UDim2.new(0, 100, 0, 100)
 script3.Image = "http://www.roblox.com/asset/?id=8000230044"
 script3.MouseButton1Click:connect(function()
+	Sound:Play()
 	loadstring(game:HttpGet("https://pastebin.com/raw/eqL5LdQQ", true))()
 end)
 
@@ -522,6 +536,7 @@ script4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script4.Size = UDim2.new(0, 100, 0, 100)
 script4.Image = "http://www.roblox.com/asset/?id=8000901170"
 script4.MouseButton1Click:connect(function()
+	Sound:Play()
 	_G.coinfarm = true
 	while _G.coinfarm do
 		local CoinLocations = game:GetService("Workspace").CoinLocations:GetChildren()
@@ -550,6 +565,7 @@ script6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script6.Size = UDim2.new(0, 100, 0, 100)
 script6.Image = "http://www.roblox.com/asset/?id=8005573834"
 script6.MouseButton1Click:connect(function()
+	Sound:Play()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script", true))()
 end)
 
@@ -562,6 +578,7 @@ script5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script5.Size = UDim2.new(0, 100, 0, 100)
 script5.Image = "http://www.roblox.com/asset/?id=8032189927"
 script5.MouseButton1Click:connect(function()
+	Sound:Play()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
 end)
 
@@ -574,6 +591,7 @@ script7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 script7.Size = UDim2.new(0, 100, 0, 100)
 script7.Image = "http://www.roblox.com/asset/?id=7699371504"
 script7.MouseButton1Click:connect(function()
+	Sound:Play()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
 end)
 
@@ -587,6 +605,7 @@ script8.Position = UDim2.new(0.021, 0, 0, 0)
 script8.Size = UDim2.new(0, 100, 0, 100)
 script8.Image = "http://www.roblox.com/asset/?id=8383643615"
 script8.MouseButton1Click:connect(function()
+	Sound:Play()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Epic%20Minigames/EpicMinigamesGUI"))()
 end)
 
