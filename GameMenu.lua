@@ -26,7 +26,7 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --Version:
-VersionGUI = "GUI v1.2.7"
+VersionGUI = "GUI v1.2.8"
 
 local tostring = tostring(math.random(1, 100))
 --ScreenGui:
@@ -171,16 +171,37 @@ settingBtn.Position = UDim2.new(0.760273993, 0, 0.00911856815, 0)
 settingBtn.Size = UDim2.new(0, 45, 0, 45)
 settingBtn.Image = "rbxassetid://8243379485"
 settingBtn.MouseButton1Click:connect(function()
-	SettingMenu.Visible = not SettingMenu.Visible	
+	if SettingMenu.Position == UDim2.new(0.604, 0, -0, 0) and SettingMenu.Visible == false then
+		SettingMenu.Visible = true
+		SettingMenu:TweenPosition(
+			UDim2.new(1.017, 0, 0, 0),
+			"Out",
+			"Bounce",
+			1,
+			false
+			)
+	else
+		
+		SettingMenu:TweenPosition(
+			UDim2.new(0.604, 0, -0, 0),
+			"Out",
+			"Bounce",
+			1,
+			false
+			)
+		wait(1)
+		SettingMenu.Visible = false
+	end
 end)
 
 --設置Menu
 SettingMenu.Name = "SettingMenu"
 SettingMenu.Parent = GUIMenu
 SettingMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
-SettingMenu.Position = UDim2.new(1.01369858, 0, 0.00911854114, 0)
-SettingMenu.Size = UDim2.new(0, 226, 0, 323)
+SettingMenu.Position = UDim2.new(0.604, 0, -0, 0)
+SettingMenu.Size = UDim2.new(0, 226, 0, 329)
 SettingMenu.Visible = false
+SettingMenu.ZIndex = 0
 
 SettingCorner.Parent = SettingMenu
 
