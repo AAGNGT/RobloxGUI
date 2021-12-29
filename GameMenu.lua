@@ -91,7 +91,7 @@ goScript.BackgroundTransparency = 1.000
 goScript.Position = UDim2.new(0.0925769582, 0, 0.00303951465, 0)
 goScript.Size = UDim2.new(0, 50, 0, 50)
 goScript.Image = "rbxassetid://8278845824"
-goScript.MouseButton1Click:connect(function()
+goScript.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
 end)
 
@@ -235,7 +235,7 @@ TextButton.Font = Enum.Font.SourceSans
 TextButton.Text = ""
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
-TextButton.MouseButton1Click:connect(function()
+TextButton.MouseButton1Down:connect(function()
 	if TextButton.BackgroundColor3 == Color3.fromRGB(255, 0, 0) then 
 		TextButton.Visible = false
 		wait(0.2)
@@ -294,7 +294,7 @@ TextButton_2.Font = Enum.Font.SourceSans
 TextButton_2.Text = ""
 TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.TextSize = 14.000
-TextButton_2.MouseButton1Click:connect(function()
+TextButton_2.MouseButton1Down:connect(function()
 	if Blur.Enabled == true then 
 		Blur.Enabled = false
 		TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -315,7 +315,7 @@ iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
 iconOPEN.Size = UDim2.new(0, 100, 0, 100)
 iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
 iconOPEN.BackgroundTransparency = 1
-iconOPEN.MouseButton1Click:connect(function()
+iconOPEN.MouseButton1Down:connect(function()
 
 	GUIMenu:TweenPosition(
 		UDim2.new(0.282, 0, 0.432, 0)
