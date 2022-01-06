@@ -17,7 +17,7 @@ local JoinGameFrame = Instance.new("Frame")
 local Join_UIGradient = Instance.new("UIGradient")
 local Join_UICorner = Instance.new("UICorner")
 local JoinText = Instance.new("TextLabel")
-local TextLabel = Instance.new("TextLabel")
+local GameNameText = Instance.new("TextLabel")
 
 
 ScriptGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -87,17 +87,17 @@ JoinText.TextScaled = true
 JoinText.TextSize = 14.000
 JoinText.TextWrapped = true
 
-TextLabel.Parent = JoinGameFrame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.137681156, 0, 0.135678396, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = "BedWars"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+GameNameText.Parent = JoinGameFrame
+GameNameText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameNameText.BackgroundTransparency = 1.000
+GameNameText.Position = UDim2.new(0.137681156, 0, 0.135678396, 0)
+GameNameText.Size = UDim2.new(0, 200, 0, 50)
+GameNameText.Font = Enum.Font.SourceSansBold
+GameNameText.Text = "BedWars"
+GameNameText.TextColor3 = Color3.fromRGB(255, 255, 255)
+GameNameText.TextScaled = true
+GameNameText.TextSize = 14.000
+GameNameText.TextWrapped = true
 
 --PasswordFRame
 local UICorner = Instance.new("UICorner")
@@ -220,3 +220,19 @@ end)
 PasswordFrame:TweenPosition(
 	UDim2.new(0.384, 0, 0.205457464, 0)
 )
+
+while true do
+	GameNameText.TextColor3 = Color3.fromRGB(255, 0, 0)
+	wait(0.3)
+	GameNameText.TextColor3 = Color3.fromRGB(255, 170, 0)
+	wait(0.3)
+	GameNameText.TextColor3 = Color3.fromRGB(255, 255, 0)
+	wait(0.3)
+	GameNameText.TextColor3 = Color3.fromRGB(0, 255, 0)
+	wait(0.3)
+	GameNameText.TextColor3 = Color3.fromRGB(85, 255, 127)
+	wait(0.3)
+	GameNameText.TextColor3 = Color3.fromRGB(0, 255, 255)
+	wait(0.3)
+	GameNameText.TextColor3 = Color3.fromRGB(85, 0, 127)
+end
