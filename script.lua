@@ -99,6 +99,54 @@ GameNameText.TextScaled = true
 GameNameText.TextSize = 14.000
 GameNameText.TextWrapped = true
 
+
+local Gameicon = Instance.new("ImageLabel")
+local GameCorner = Instance.new("UICorner")
+
+local LeftBtn = Instance.new("ImageButton")
+local LeftCorner = Instance.new("UICorner")
+
+local rightBtn = Instance.new("ImageButton")
+local rightCorner = Instance.new("UICorner")
+local ok = Instance.new("ImageButton")
+
+Gameicon.Name = "Gameicon"
+Gameicon.Parent = JoinGameFrame
+Gameicon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Gameicon.Position = UDim2.new(0.300724626, 0, 0.309045255, 0)
+Gameicon.Size = UDim2.new(0, 110, 0, 110)
+Gameicon.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+GameCorner.Parent = Gameicon
+
+LeftBtn.Name = "LeftBtn"
+LeftBtn.Parent = JoinGameFrame
+LeftBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LeftBtn.Position = UDim2.new(0.728260815, 0, 0.640703499, 0)
+LeftBtn.Size = UDim2.new(0, 66, 0, 66)
+LeftBtn.Image = "http://www.roblox.com/asset/?id=8467430096"
+
+LeftCorner.Name = "LeftCorner"
+LeftCorner.Parent = LeftBtn
+
+rightBtn.Name = "rightBtn"
+rightBtn.Parent = JoinGameFrame
+rightBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+rightBtn.Position = UDim2.new(0.0326086953, 0, 0.640703499, 0)
+rightBtn.Size = UDim2.new(0, 66, 0, 66)
+rightBtn.Image = "http://www.roblox.com/asset/?id=8467429760"
+
+rightCorner.Name = "rightCorner"
+rightCorner.Parent = rightBtn
+
+ok.Name = "ok"
+ok.Parent = JoinGameFrame
+ok.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ok.BackgroundTransparency = 1.000
+ok.Position = UDim2.new(0.300724626, 0, 0.643216074, 0)
+ok.Size = UDim2.new(0, 110, 0, 65)
+ok.Image = "http://www.roblox.com/asset/?id=8467487817"
+
 --PasswordFRame
 local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
