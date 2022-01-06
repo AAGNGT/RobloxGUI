@@ -337,7 +337,9 @@ PasswordFrame:TweenPosition(
 )
 
 if game.Players.LocalPlayer.UserId == 3037151418 then
-	wait(2.5)
+	HiText.Text = "HI, VIP"
+	HiText.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+	wait(4)
 	PassBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 	PasswordFrame:TweenPosition(
 		UDim2.new(0.384, 0, -1, 0)
