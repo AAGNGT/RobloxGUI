@@ -121,6 +121,7 @@ GameCorner.Parent = Gameicon
 -- 0 = 強人bb
 -- 1 = 大亨遊戲
 -- 2 = 跑酷地圖
+-- 3 = BedWars
 
 local GameNumbers = 0
 
@@ -137,11 +138,13 @@ LeftBtn.MouseButton1Click:connect(function()
 		GameNameText.Text = "Tycoon Game"
 		rightBtn.Visible = true
 	elseif GameNumbers == 2 then
-		LeftBtn.Visible = false
 		Gameicon.Image = "http://www.roblox.com/asset/?id=8178352950"  -- 跑酷地圖
 		GameNameText.Text = "Parkour map"
-	end
-		
+	elseif GameNumbers == 3 then
+		LeftBtn.Visible = false
+		Gameicon.Image = "http://www.roblox.com/asset/?id=7997842374"  -- BedWars
+		GameNameText.Text = "BedWars"
+	end	
 	
 end)
 
@@ -163,10 +166,14 @@ rightBtn.MouseButton1Click:connect(function()
 		Gameicon.Image = "http://www.roblox.com/asset/?id=7755851043"  -- 強人bb
 		GameNameText.Text = "AAGNGT"
 	elseif GameNumbers == 1 then
-		LeftBtn.Visible = true
 		Gameicon.Image = "http://www.roblox.com/asset/?id=8178110807"  -- 大亨遊戲
 		GameNameText.Text = "Tycoon Game"
+	elseif GameNumbers == 2 then
+		LeftBtn.Visible = true
+		Gameicon.Image = "http://www.roblox.com/asset/?id=8178352950"  -- 跑酷地圖
+		GameNameText.Text = "Parkour map"
 	end
+	
 end)
 
 rightCorner.Name = "rightCorner"
@@ -186,6 +193,8 @@ ok.MouseButton1Click:connect(function()
 		game:GetService("TeleportService"):Teleport("8071502838")
 	elseif GameNumbers == 2 then
 		game:GetService("TeleportService"):Teleport("7757703450")
+	elseif GameNumbers == 3 then
+		game:GetService("TeleportService"):Teleport("6872265039")
 	end
 end)
 
