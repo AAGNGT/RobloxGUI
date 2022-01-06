@@ -93,7 +93,7 @@ GameNameText.BackgroundTransparency = 1.000
 GameNameText.Position = UDim2.new(0.137681156, 0, 0.135678396, 0)
 GameNameText.Size = UDim2.new(0, 200, 0, 50)
 GameNameText.Font = Enum.Font.SourceSansBold
-GameNameText.Text = "BedWars"
+GameNameText.Text = "AAGNGT"
 GameNameText.TextColor3 = Color3.fromRGB(255, 255, 255)
 GameNameText.TextScaled = true
 GameNameText.TextSize = 14.000
@@ -115,9 +115,14 @@ Gameicon.Parent = JoinGameFrame
 Gameicon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Gameicon.Position = UDim2.new(0.300724626, 0, 0.309045255, 0)
 Gameicon.Size = UDim2.new(0, 110, 0, 110)
-Gameicon.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+Gameicon.Image = "http://www.roblox.com/asset/?id=7755851043"
 
 GameCorner.Parent = Gameicon
+-- 0 = 強人bb
+-- 1 = 大亨遊戲
+-- 2 = 跑酷地圖
+
+local GameNumbers = 0
 
 LeftBtn.Name = "LeftBtn"
 LeftBtn.Parent = JoinGameFrame
@@ -125,6 +130,21 @@ LeftBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LeftBtn.Position = UDim2.new(0.728260815, 0, 0.640703499, 0)
 LeftBtn.Size = UDim2.new(0, 66, 0, 66)
 LeftBtn.Image = "http://www.roblox.com/asset/?id=8467430096"
+LeftBtn.MouseButton1Click:connect(function()
+	GameNumbers += 1
+	if GameNumbers == 1 then
+		Gameicon.Image = "http://www.roblox.com/asset/?id=8178110807"  -- 大亨遊戲
+		GameNameText.Text = "Tycoon Game"
+		rightBtn.Visible = true
+	elseif GameNumbers == 2 then
+		LeftBtn.Visible = false
+		Gameicon.Image = "http://www.roblox.com/asset/?id=8178352950"  -- 跑酷地圖
+		GameNameText.Text = "Parkour map"
+	end
+		
+	
+end)
+
 
 LeftCorner.Name = "LeftCorner"
 LeftCorner.Parent = LeftBtn
@@ -135,6 +155,19 @@ rightBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 rightBtn.Position = UDim2.new(0.0326086953, 0, 0.640703499, 0)
 rightBtn.Size = UDim2.new(0, 66, 0, 66)
 rightBtn.Image = "http://www.roblox.com/asset/?id=8467429760"
+rightBtn.Visible = false
+rightBtn.MouseButton1Click:connect(function()
+	GameNumbers -= 1
+	if GameNumbers == 0 then
+		rightBtn.Visible = false
+		Gameicon.Image = "http://www.roblox.com/asset/?id=7755851043"  -- 強人bb
+		GameNameText.Text = "AAGNGT"
+	elseif GameNumbers == 1 then
+		LeftBtn.Visible = true
+		Gameicon.Image = "http://www.roblox.com/asset/?id=8178110807"  -- 大亨遊戲
+		GameNameText.Text = "Tycoon Game"
+	end
+end)
 
 rightCorner.Name = "rightCorner"
 rightCorner.Parent = rightBtn
