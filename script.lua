@@ -179,6 +179,15 @@ ok.BackgroundTransparency = 1.000
 ok.Position = UDim2.new(0.300724626, 0, 0.643216074, 0)
 ok.Size = UDim2.new(0, 110, 0, 65)
 ok.Image = "http://www.roblox.com/asset/?id=8467487817"
+ok.MouseButton1Click:connect(function()
+	if GameNumbers == 0 then
+		game:GetService("TeleportService"):Teleport("7754960945")
+	elseif GameNumbers == 1 then
+		game:GetService("TeleportService"):Teleport("8071502838")
+	elseif GameNumbers == 2 then
+		game:GetService("TeleportService"):Teleport("7757703450")
+	end
+end)
 
 --PasswordFRame
 local UICorner = Instance.new("UICorner")
