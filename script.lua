@@ -131,6 +131,7 @@ LeftBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LeftBtn.Position = UDim2.new(0.728260815, 0, 0.640703499, 0)
 LeftBtn.Size = UDim2.new(0, 66, 0, 66)
 LeftBtn.Image = "http://www.roblox.com/asset/?id=8467430096"
+LeftBtn.ImageTransparency = 0.3
 LeftBtn.MouseButton1Click:connect(function()
 	GameNumbers += 1
 	if GameNumbers == 1 then
@@ -159,6 +160,7 @@ rightBtn.Position = UDim2.new(0.0326086953, 0, 0.640703499, 0)
 rightBtn.Size = UDim2.new(0, 66, 0, 66)
 rightBtn.Image = "http://www.roblox.com/asset/?id=8467429760"
 rightBtn.Visible = false
+rightBtn.ImageTransparency = 0.3
 rightBtn.MouseButton1Click:connect(function()
 	GameNumbers -= 1
 	if GameNumbers == 0 then
@@ -196,6 +198,20 @@ ok.MouseButton1Click:connect(function()
 	elseif GameNumbers == 3 then
 		game:GetService("TeleportService"):Teleport("6872265039")
 	end
+end)
+
+rightBtn.MouseEnter:Connect(function()
+	rightBtn.ImageTransparency = 0
+end)
+rightBtn.MouseLeave:Connect(function()
+	rightBtn.ImageTransparency = 0.3
+end)
+
+LeftBtn.MouseEnter:Connect(function()
+	LeftBtn.ImageTransparency = 0
+end)
+LeftBtn.MouseLeave:Connect(function()
+	LeftBtn.ImageTransparency = 0.3
 end)
 
 --PasswordFRame
