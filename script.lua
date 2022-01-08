@@ -122,6 +122,8 @@ GameCorner.Parent = Gameicon
 -- 1 = 大亨遊戲
 -- 2 = 跑酷地圖
 -- 3 = BedWars
+-- 4 = Murder Mystery 2
+-- 5 = 造船尋寶
 
 local GameNumbers = 0
 
@@ -142,10 +144,22 @@ LeftBtn.MouseButton1Click:connect(function()
 		Gameicon.Image = "http://www.roblox.com/asset/?id=8178352950"  -- 跑酷地圖
 		GameNameText.Text = "Parkour map"
 	elseif GameNumbers == 3 then
-		LeftBtn.Visible = false
 		Gameicon.Image = "http://www.roblox.com/asset/?id=7997842374"  -- BedWars
 		GameNameText.Text = "BedWars"
+	elseif GameNumbers == 4 then
+		Gameicon.Image = "http://www.roblox.com/asset/?id=2991130571"  -- Murder Mystery 2
+		GameNameText.Text = "Murder Mystery 2"	
+	elseif GameNumbers == 5 then
+		Gameicon.Image = "http://www.roblox.com/asset/?id=6511290759"  -- 造船尋寶
+		GameNameText.Text = "Build A Boat For Treasure"	
 	end	
+	
+	--去到盡頭就關 is if
+	if GameNumbers == 5 then
+		LeftBtn.Visible = false
+	else
+		LeftBtn.Visible = true
+	end
 	
 end)
 
@@ -171,9 +185,21 @@ rightBtn.MouseButton1Click:connect(function()
 		Gameicon.Image = "http://www.roblox.com/asset/?id=8178110807"  -- 大亨遊戲
 		GameNameText.Text = "Tycoon Game"
 	elseif GameNumbers == 2 then
-		LeftBtn.Visible = true
 		Gameicon.Image = "http://www.roblox.com/asset/?id=8178352950"  -- 跑酷地圖
 		GameNameText.Text = "Parkour map"
+	elseif GameNumbers == 3 then
+		Gameicon.Image = "http://www.roblox.com/asset/?id=7997842374"  -- BedWars
+		GameNameText.Text = "BedWars"
+	elseif GameNumbers == 4 then
+		Gameicon.Image = "http://www.roblox.com/asset/?id=2991130571"  -- Murder Mystery 2
+		GameNameText.Text = "Murder Mystery 2"	
+	end
+	
+	--去到盡頭就關 is if
+	if GameNumbers == 5 then
+		LeftBtn.Visible = false
+	else
+		LeftBtn.Visible = true
 	end
 	
 end)
@@ -197,7 +223,11 @@ ok.MouseButton1Click:connect(function()
 		game:GetService("TeleportService"):Teleport("7757703450")
 	elseif GameNumbers == 3 then
 		game:GetService("TeleportService"):Teleport("6872265039")
-	end
+	elseif GameNumbers == 4 then
+		game:GetService("TeleportService"):Teleport("142823291")
+	elseif GameNumbers == 5 then
+		game:GetService("TeleportService"):Teleport("537413528")
+	end	
 end)
 
 rightBtn.MouseEnter:Connect(function()
