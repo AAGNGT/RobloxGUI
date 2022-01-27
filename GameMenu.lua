@@ -316,6 +316,7 @@ iconOPEN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 iconOPEN.BorderSizePixel = 0
 iconOPEN.Position = UDim2.new(0, 0, 0.581, 0)
 iconOPEN.Size = UDim2.new(0, 100, 0, 100)
+iconOPEN.Visible = false
 iconOPEN.Image = "http://www.roblox.com/asset/?id=8032590887"
 iconOPEN.BackgroundTransparency = 1
 iconOPEN.MouseButton1Click:connect(function()
@@ -669,3 +670,66 @@ end)
 settingBtn.MouseLeave:Connect(function()
 	settingBtn.ImageTransparency = 0.3
 end)
+
+--if
+if game.Workspace:FindFirstChild(" Noob") then
+	iconOPEN.Visible = true
+else
+	local loadFrame = Instance.new("Frame")
+	local loadImage = Instance.new("ImageLabel")
+	local loadText = Instance.new("TextLabel")
+	local PartText = Instance.new("Part")
+	
+	PartText.Parent = game.Workspace
+	PartText.Name = " Noob"
+	PartText.Transparency = 1
+	PartText.CanCollide = false
+	
+	loadFrame.Name = "loadFrame"
+	loadFrame.Parent = ScreenGui
+	loadFrame.BackgroundColor3 = Color3.fromRGB(104, 99, 103)
+	loadFrame.Position = UDim2.new(0.441558391, 0, 0.255216688, 0)
+	loadFrame.Size = UDim2.new(0, 239, 0, 261)
+
+	loadImage.Parent = loadFrame
+	loadImage.BackgroundColor3 = Color3.fromRGB(104, 99, 103)
+	loadImage.BackgroundTransparency = 1.000
+	loadImage.Position = UDim2.new(0.183, 0, 0.295, 0)
+	loadImage.Size = UDim2.new(0, 150, 0, 150)
+	loadImage.Image = "rbxassetid://275671230"
+
+
+
+	loadText.Parent = loadFrame
+	loadText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadText.BackgroundTransparency = 1.000
+	loadText.Position = UDim2.new(0.075, 0, 0.069, 0)
+	loadText.Size = UDim2.new(0, 200, 0, 50)
+	loadText.Font = Enum.Font.Oswald
+	loadText.Text = "Downloading"
+	loadText.TextColor3 = Color3.fromRGB(0, 0, 0)
+	loadText.TextScaled = true
+	loadText.TextSize = 14.000
+	loadText.TextWrapped = true
+
+	for i = 1, 1368 do
+		wait(0.00001)
+		loadImage.Rotation = loadImage.Rotation + 4
+		loadText.Text = "Downloading " ..i.. "/1368"
+		if i == 253 or i == 489 or i == 998 then
+			wait(0.5)
+		end
+
+		if i == 350 or i == 1367 then
+			wait(1)
+		end
+	end
+	loadImage.Rotation = 0
+	loadImage.Image = "rbxassetid://501164670"
+	wait(1)
+
+	loadFrame:TweenPosition(
+		UDim2.new(0.442, 0, -1, 0)
+	)
+	iconOPEN.Visible = true
+end
