@@ -27,7 +27,7 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --Version:
-VersionGUI = "GUI v1.2.8"
+VersionGUI = "GUI v1.3.0"
 
 local tostring = tostring(math.random(1, 100))
 --ScreenGui:
@@ -121,47 +121,6 @@ ResetText.TextScaled = true
 ResetText.TextSize = 14.000
 ResetText.TextWrapped = true
 ResetText.Visible = false
-
---重設按鈕
-resetBtn.Name = "resetBtn"
-resetBtn.Parent = GUIMenu
-resetBtn.ImageTransparency = 0.3
-resetBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-resetBtn.BackgroundTransparency = 1.000
-resetBtn.Position = UDim2.new(0.682, 0, 0.01, 0)
-resetBtn.Size = UDim2.new(0, 45, 0, 45)
-resetBtn.Image = "rbxassetid://8181273323"
-resetBtn.MouseButton1Click:connect(function()
-	GUIMenu.Visible = false
-	iconOPEN.Visible = false
-	Blur.Size = 0
-
-	ResetText.Visible = true
-
-	local Reset = 0
-
-	while Reset < 7 do
-		Reset += 1
-		ResetText.Text = "Resetting."
-		wait(0.2)
-		ResetText.Text = "Resetting.."
-		wait(0.2)
-		ResetText.Text = "Resetting..."
-		wait(0.2)
-	end
-
-	Black:TweenPosition(
-		UDim2.new(0, 0,-1, 0)
-	)
-
-	ResetText.TextColor3 = Color3.fromRGB(85, 255, 0)
-	ResetText.Text = "ok"
-	wait(1.1)
-	ResetText.Text = "Please reload the script"
-	wait(3)
-	ResetText.Visible = false
-	ScreenGui:Destroy()
-end)
 
 ------設定menu------------設定menu---------設定menu---------設定menu------
 
@@ -678,7 +637,8 @@ else
 	local loadFrame = Instance.new("Frame")
 	local loadImage = Instance.new("ImageLabel")
 	local loadText = Instance.new("TextLabel")
-	local PartText = Instance.new("Part")
+	local loadVersion = Instance.new("TextLabel")
+	PartText = Instance.new("Part")
 	
 	PartText.Parent = game.Workspace
 	PartText.Name = " Noob"
@@ -694,11 +654,22 @@ else
 	loadImage.Parent = loadFrame
 	loadImage.BackgroundColor3 = Color3.fromRGB(104, 99, 103)
 	loadImage.BackgroundTransparency = 1.000
-	loadImage.Position = UDim2.new(0.183, 0, 0.295, 0)
-	loadImage.Size = UDim2.new(0, 150, 0, 150)
+	loadImage.Position = UDim2.new(0.204, 0, 0.23, 0)
+	loadImage.Size = UDim2.new(0, 140, 0, 140)
 	loadImage.Image = "rbxassetid://275671230"
 
-
+	loadVersion.Name = "loadVersion"
+	loadVersion.Parent = loadFrame
+	loadVersion.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadVersion.BackgroundTransparency = 1.000
+	loadVersion.Position = UDim2.new(0.066945605, 0, 0.758620679, 0)
+	loadVersion.Size = UDim2.new(0, 200, 0, 50)
+	loadVersion.Font = Enum.Font.DenkOne
+	loadVersion.Text = VersionGUI
+	loadVersion.TextColor3 = Color3.fromRGB(0, 0, 0)
+	loadVersion.TextScaled = true
+	loadVersion.TextSize = 14.000
+	loadVersion.TextWrapped = true
 
 	loadText.Parent = loadFrame
 	loadText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -726,10 +697,54 @@ else
 	end
 	loadImage.Rotation = 0
 	loadImage.Image = "rbxassetid://501164670"
-	wait(1)
+	loadVersion.TextColor3 = Color3.fromRGB(0, 255, 0)
+	loadText.TextColor3 = Color3.fromRGB(0, 255, 0)
+	wait(1.5)
 
 	loadFrame:TweenPosition(
 		UDim2.new(0.442, 0, -1, 0)
 	)
 	iconOPEN.Visible = true
 end
+
+--重設按鈕
+resetBtn.Name = "resetBtn"
+resetBtn.Parent = GUIMenu
+resetBtn.ImageTransparency = 0.3
+resetBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+resetBtn.BackgroundTransparency = 1.000
+resetBtn.Position = UDim2.new(0.682, 0, 0.01, 0)
+resetBtn.Size = UDim2.new(0, 45, 0, 45)
+resetBtn.Image = "rbxassetid://8181273323"
+resetBtn.MouseButton1Click:connect(function()
+	GUIMenu.Visible = false
+	iconOPEN.Visible = false
+	Blur.Size = 0
+
+	ResetText.Visible = true
+
+	local Reset = 0
+
+	while Reset < 7 do
+		Reset += 1
+		ResetText.Text = "Resetting."
+		wait(0.2)
+		ResetText.Text = "Resetting.."
+		wait(0.2)
+		ResetText.Text = "Resetting..."
+		wait(0.2)
+	end
+
+	Black:TweenPosition(
+		UDim2.new(0, 0,-1, 0)
+	)
+
+	ResetText.TextColor3 = Color3.fromRGB(85, 255, 0)
+	ResetText.Text = "ok"
+	wait(1.1)
+	ResetText.Text = "Please reload the script"
+	wait(3)
+	ResetText.Visible = false
+	ScreenGui:Destroy()
+	PartText:Remove()
+end)
