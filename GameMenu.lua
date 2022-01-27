@@ -183,7 +183,7 @@ settingBtn.MouseButton1Click:connect(function()
 			"Bounce",
 			1,
 			false
-			)
+		)
 	else
 		SettingMenu:TweenPosition(
 			UDim2.new(0.604, 0, -0, 0),
@@ -191,7 +191,7 @@ settingBtn.MouseButton1Click:connect(function()
 			"Bounce",
 			1,
 			false
-			)
+		)
 		wait(1)
 		SettingMenu.Visible = false
 	end
@@ -390,10 +390,6 @@ exit.MouseButton1Click:connect(function()
 	Blur.Size = 3
 	wait(0.2)
 	Blur.Size = 0
-
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-
-	Notify("Leave GUI","Bye", 4)
 
 	ScreenGui:Destroy()
 end)
@@ -673,9 +669,3 @@ end)
 settingBtn.MouseLeave:Connect(function()
 	settingBtn.ImageTransparency = 0.3
 end)
-
-
-
---loading say hi
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hyun8941/Roblox/main/xFrost%20Notify/Notify%20V1.lua", true))()
-Notify("Join GUI","Hi", 4)
