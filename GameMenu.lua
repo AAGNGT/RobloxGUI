@@ -27,7 +27,7 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --Version:
-VersionGUI = "GUI v1.3.0"
+VersionGUI = "GUI v1.3.1"
 
 local tostring = tostring(math.random(1, 100))
 --ScreenGui:
@@ -683,18 +683,19 @@ else
 	loadText.TextSize = 14.000
 	loadText.TextWrapped = true
 
-	for i = 1, 1368 do
+	for i = 1, 1210 do
 		wait(0.00001)
 		loadImage.Rotation = loadImage.Rotation + 4
-		loadText.Text = "Downloading " ..i.. "/1368"
-		if i == 253 or i == 489 or i == 998 then
+		loadText.Text = "Downloading " ..i.. "/1210"
+		if i == 253 or i == 489 or i == 998 or i == 1367 then
 			wait(0.5)
 		end
 
-		if i == 350 or i == 1367 then
-			wait(1)
+		if i == 400 or i == 500 or i == 600 or i == 700 or i == 800 or i == 900 or i == 1000 then
+			print("Downloading",i,"%")
 		end
 	end
+	print("download OK")
 	loadImage.Rotation = 0
 	loadImage.Image = "rbxassetid://501164670"
 	loadVersion.TextColor3 = Color3.fromRGB(0, 255, 0)
