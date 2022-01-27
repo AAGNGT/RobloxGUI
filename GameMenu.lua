@@ -35,7 +35,7 @@ ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ScreenGui.IgnoreGuiInset = true
 ScreenGui.Name = "ScreenGui " ..tostring
-print(ScreenGui)
+warn("-----",ScreenGui,"-----")
 
 --Number
 number.Name = "Number"
@@ -350,7 +350,7 @@ exit.MouseButton1Click:connect(function()
 	Blur.Size = 3
 	wait(0.2)
 	Blur.Size = 0
-
+	print("-----exit OK-----")
 	ScreenGui:Destroy()
 end)
 
@@ -692,10 +692,10 @@ else
 		end
 
 		if i == 400 or i == 500 or i == 600 or i == 700 or i == 800 or i == 900 or i == 1000 then
-			print("Downloading",i,"%")
+			warn("----- download"..i.. "% -----" )
 		end
 	end
-	print("download OK")
+	print("-----download OK-----")
 	loadImage.Rotation = 0
 	loadImage.Image = "rbxassetid://501164670"
 	loadVersion.TextColor3 = Color3.fromRGB(0, 255, 0)
@@ -746,6 +746,7 @@ resetBtn.MouseButton1Click:connect(function()
 	ResetText.Text = "Please reload the script"
 	wait(3)
 	ResetText.Visible = false
+	print("-----Reset OK-----")
 	ScreenGui:Destroy()
-	PartText:Remove()
+	game.Workspace:FindFirstChild(" Noob"):Remove()
 end)
