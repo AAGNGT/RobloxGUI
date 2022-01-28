@@ -684,11 +684,15 @@ else
 	loadText.TextWrapped = true
 
 	for i = 1, 1210 do
-		wait(0.00001)
+		wait(0.000001)
 		loadImage.Rotation = loadImage.Rotation + 4
 		loadText.Text = "Downloading " ..i.. "/1210"
-		if i == 253 or i == 489 or i == 998 or i == 1367 then
+		if i == 253 or i == 489 or i == 998 or i == 1101 then
 			wait(0.5)
+		end
+
+		if i == 1209 then
+			wait(1)
 		end
 
 		if i == 400 or i == 500 or i == 600 or i == 700 or i == 800 or i == 900 or i == 1000 then
