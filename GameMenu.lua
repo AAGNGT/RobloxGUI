@@ -26,8 +26,10 @@ local number = Instance.new("TextLabel")         --GUI編號
 local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
---Version:
+--data:
 VersionGUI = "GUI v1.3.2"
+
+Downloads = 1320
 
 local tostring = tostring(math.random(1, 100))
 --ScreenGui:
@@ -169,7 +171,7 @@ SettingCorner.Parent = SettingMenu
 
 --護眼畫面--
 local TextLabel = Instance.new("TextLabel")    
-
+           
 Black.Parent = ScreenGui
 Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Black.BackgroundTransparency = 1
@@ -300,7 +302,7 @@ settBtn_2.MouseButton1Click:Connect(function()
 		settBtnFrame_2:TweenPosition(UDim2.new(0.56, 0, 0.12 ,0), "Out", "Linear", 0.2, false)
 		Blur.Enabled = true
 	end	
-end)
+	end)
 
 settCorner_2.CornerRadius = UDim.new(0, 60)
 settCorner_2.Name = "settCorner_1"
@@ -723,28 +725,26 @@ else
 	loadText.TextSize = 14.000
 	loadText.TextWrapped = true
 
-	for i = 1, 1319 do
+
+	for i = 1, Downloads do
 		wait(0.000001)
-		loadImage.Rotation = loadImage.Rotation + 4
-		loadText.Text = "Downloading " ..i.. "/1319"
-		if i == 253 or i == 489 or i == 998 or i == 1108 or i == 1210 then
-			wait(0.5)
+		loadImage.Rotation = loadImage.Rotation + 5
+		loadText.Text = "Downloading " ..i.. "/" ..Downloads
+		if i == 489 or i == 998 or i == 1108 or i == 1210 then
+			wait(0.9)
 		end
 
-		if i == 1318 then
-			wait(1)
-		end
-
-		if i == 400 or i == 500 or i == 600 or i == 700 or i == 800 or i == 900 or i == 1000 then
-			warn("----- download"..i.. "% -----" )
+		if i == Downloads -= 1 then
+			wait(3)
 		end
 	end
+	
 	print("-----download OK-----")
 	loadImage.Rotation = 0
 	loadImage.Image = "rbxassetid://501164670"
 	loadVersion.TextColor3 = Color3.fromRGB(0, 255, 0)
 	loadText.TextColor3 = Color3.fromRGB(0, 255, 0)
-	wait(1.5)
+	wait(3)
 
 	loadFrame:TweenPosition(
 		UDim2.new(0.442, 0, -1, 0)
