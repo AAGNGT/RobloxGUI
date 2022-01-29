@@ -66,6 +66,7 @@ GUIMenu.Draggable = true
 GUIUICorner.Parent = GUIMenu
 
 --版本Text
+VersionText.Name = VersionGUI
 VersionText.Parent = GUIMenu
 VersionText.BackgroundColor3 = Color3.fromRGB(103, 68, 0)
 VersionText.Size = UDim2.new(0, 584, 0, 52)
@@ -170,7 +171,7 @@ SettingMenu.ZIndex = 0
 SettingCorner.Parent = SettingMenu
 
 --護眼畫面--
-local TextLabel = Instance.new("TextLabel")    
+local SettText_1 = Instance.new("TextLabel")    
            
 Black.Parent = ScreenGui
 Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -178,46 +179,47 @@ Black.BackgroundTransparency = 1
 Black.Size = UDim2.new(1, 0, 1, 0)
 Black.ZIndex = 0
 
-TextLabel.Parent = SettingMenu
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.035, 0, 0.043, 0)
-TextLabel.Size = UDim2.new(0, 145, 0, 45)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Eye protection"
-TextLabel.TextColor3 = Color3.fromRGB(190, 190, 190)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+SettText_1.Name = "SettText_1"
+SettText_1.Parent = SettingMenu
+SettText_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SettText_1.BackgroundTransparency = 1.000
+SettText_1.Position = UDim2.new(0.035, 0, 0.043, 0)
+SettText_1.Size = UDim2.new(0, 145, 0, 45)
+SettText_1.Font = Enum.Font.SourceSans
+SettText_1.Text = "Eye protection"
+SettText_1.TextColor3 = Color3.fromRGB(190, 190, 190)
+SettText_1.TextScaled = true
+SettText_1.TextSize = 14.000
+SettText_1.TextWrapped = true
 
 --護眼畫面Btn--
-local settBtn = Instance.new("TextButton")
+local settBtn_1 = Instance.new("TextButton")
 local settCorner_1 = Instance.new("UICorner")
 local settBtnFrame_1 = Instance.new("Frame")
 local settUICorner_1_2 = Instance.new("UICorner")
 
 settBtnFrame_1.Name = "settBtnFrame_1"
-settBtnFrame_1.Parent = settBtn
+settBtnFrame_1.Parent = settBtn_1
 settBtnFrame_1.BackgroundColor3 = Color3.fromRGB(90, 90, 90)
 settBtnFrame_1.Position = UDim2.new(0.0970000029, 0, 0.119999997, 0)
 settBtnFrame_1.Size = UDim2.new(0, 23, 0, 18)
 
 settUICorner_1_2.CornerRadius = UDim.new(0, 60)
-settUICorner_1_2.Name = "settUICorner_1.2"
+settUICorner_1_2.Name = "settUICorner_1_2"
 settUICorner_1_2.Parent = settBtnFrame_1
 
-settBtn.Name = "settBtn"
-settBtn.Parent = SettingMenu
-settBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-settBtn.Position = UDim2.new(0.693, 0, 0.081, 0)
-settBtn.Size = UDim2.new(0, 67, 0, 25)
-settBtn.Font = Enum.Font.SourceSans
-settBtn.Text = ""
-settBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-settBtn.TextSize = 14.000
-settBtn.MouseButton1Click:Connect(function()
+settBtn_1.Name = "settBtn_1"
+settBtn_1.Parent = SettingMenu
+settBtn_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+settBtn_1.Position = UDim2.new(0.693, 0, 0.081, 0)
+settBtn_1.Size = UDim2.new(0, 67, 0, 25)
+settBtn_1.Font = Enum.Font.SourceSans
+settBtn_1.Text = ""
+settBtn_1.TextColor3 = Color3.fromRGB(0, 0, 0)
+settBtn_1.TextSize = 14.000
+settBtn_1.MouseButton1Click:Connect(function()
 	if settBtnFrame_1.Position == UDim2.new(0.097, 0, 0.12, 0) then
-		settBtn.BackgroundColor3 = Color3.fromRGB(65, 182,255)
+		settBtn_1.BackgroundColor3 = Color3.fromRGB(65, 182,255)
 		settBtnFrame_1:TweenPosition(UDim2.new(0.56, 0, 0.12 ,0), "In", "Linear", 0.2, false)
 		wait(0.2)
 		Black.BackgroundTransparency = 0.90
@@ -230,7 +232,7 @@ settBtn.MouseButton1Click:Connect(function()
 		wait(0.2)
 		Black.BackgroundTransparency = 0.57
 	else
-		settBtn.BackgroundColor3 = Color3.fromRGB(252, 252, 252)
+		settBtn_1.BackgroundColor3 = Color3.fromRGB(252, 252, 252)
 		settBtnFrame_1:TweenPosition(UDim2.new(0.097, 0, 0.12, 0), "Out", "Linear", 0.2, false)
 		Black.BackgroundTransparency = 0.65
 		wait(0.2)
@@ -246,7 +248,7 @@ end)
 
 settCorner_1.CornerRadius = UDim.new(0, 60)
 settCorner_1.Name = "settCorner_1"
-settCorner_1.Parent = settBtn
+settCorner_1.Parent = settBtn_1
 
 --模糊畫面--
 local TextLabel_2 = Instance.new("TextLabel")
@@ -255,6 +257,7 @@ Blur.Parent = game.Lighting
 Blur.Enabled = true
 Blur.Size = 0
 
+TextLabel_2.Name = "settText_2"
 TextLabel_2.Parent = SettingMenu
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.BackgroundTransparency = 1.000
@@ -273,17 +276,17 @@ local settCorner_2 = Instance.new("UICorner")
 local settBtnFrame_2 = Instance.new("Frame")
 local settUICorner_2_2 = Instance.new("UICorner")
 
-settBtnFrame_2.Name = "settBtnFrame_1"
+settBtnFrame_2.Name = "settBtnFrame_2"
 settBtnFrame_2.Parent = settBtn_2
 settBtnFrame_2.BackgroundColor3 = Color3.fromRGB(90, 90, 90)
 settBtnFrame_2.Position = UDim2.new(0.56, 0, 0.12 ,0)
 settBtnFrame_2.Size = UDim2.new(0, 23, 0, 18)
 
 settUICorner_2_2.CornerRadius = UDim.new(0, 60)
-settUICorner_2_2.Name = "settUICorner_1.2"
+settUICorner_2_2.Name = "settUICorner_2_2"
 settUICorner_2_2.Parent = settBtnFrame_2
 
-settBtn_2.Name = "settBtn"
+settBtn_2.Name = "settBtn_2"
 settBtn_2.Parent = SettingMenu
 settBtn_2.BackgroundColor3 = Color3.fromRGB(65, 182,255)
 settBtn_2.Position = UDim2.new(0.693, 0, 0.22, 0)
@@ -305,7 +308,7 @@ settBtn_2.MouseButton1Click:Connect(function()
 	end)
 
 settCorner_2.CornerRadius = UDim.new(0, 60)
-settCorner_2.Name = "settCorner_1"
+settCorner_2.Name = "settCorner_2"
 settCorner_2.Parent = settBtn_2
 
 ----開啟關閉按鈕-------開啟關閉按鈕------開啟關閉按鈕-----開啟關閉按鈕-----
@@ -783,7 +786,7 @@ resetBtn.MouseButton1Click:connect(function()
 	Black:TweenPosition(
 		UDim2.new(0, 0,-1, 0)
 	)
-
+	game.Workspace:FindFirstChild(" Noob"):Remove()
 	ResetText.TextColor3 = Color3.fromRGB(85, 255, 0)
 	ResetText.Text = "ok"
 	wait(1.1)
@@ -792,5 +795,4 @@ resetBtn.MouseButton1Click:connect(function()
 	ResetText.Visible = false
 	print("-----Reset OK-----")
 	ScreenGui:Destroy()
-	game.Workspace:FindFirstChild(" Noob"):Remove()
 end)
