@@ -366,8 +366,10 @@ PasswordFrame:TweenPosition(
 	UDim2.new(0.384, 0, 0.205457464, 0)
 )
 
+VIPID = game.Players.LocalPlayer.UserId
+
 --特權
-if game.Players.LocalPlayer.UserId == 3037151418 and game.Players.LocalPlayer.UserId == 1474569194 then
+if VIPID == 3037151418 or VIPID == 1474569194 then
 	HiText.Text = "HI, VIP"
 	HiText.TextColor3 = Color3.fromRGB(255, 255, 0)
 	wait(4)
