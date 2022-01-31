@@ -316,6 +316,7 @@ local ColorMenu = Instance.new("Frame")
 local C_Color = Instance.new("TextButton")
 local C_UICorner = Instance.new("UICorner")
 local C_UICorner_2 = Instance.new("UICorner")
+local C_exitBtn = Instance.new("TextButton")
 
 ColorMenu.Name = "ColorMenu"
 ColorMenu.Parent = GUIMenu
@@ -324,6 +325,28 @@ ColorMenu.Position = UDim2.new(0.604, 0, -0, 0)
 ColorMenu.Size = UDim2.new(0, 226, 0, 329)
 ColorMenu.Visible = false
 ColorMenu.ZIndex = 0
+
+C_exitBtn.Name = "C_exitBtn"
+C_exitBtn.Parent = ColorMenu
+C_exitBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+C_exitBtn.BackgroundTransparency = 1.000
+C_exitBtn.Position = UDim2.new(0.831858397, 0, 0.0101122102, 0)
+C_exitBtn.Size = UDim2.new(0, 38, 0, 37)
+C_exitBtn.Font = Enum.Font.SourceSansBold
+C_exitBtn.Text = "X"
+C_exitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+C_exitBtn.TextScaled = true
+C_exitBtn.TextSize = 14.000
+C_exitBtn.TextWrapped = true
+C_exitBtn.MouseButton1Click:connect(function()
+	ColorMenu:TweenPosition(UDim2.new(0.604, 0, -0, 0),"Out","Bounce",1,false)
+	wait(1.1)
+	ColorMenu.Visible = false
+
+	SettingMenu:TweenPosition(UDim2.new(1.017, 0, 0, 0),"Out","Bounce",1,false)
+	SettingMenu.Visible = true
+	settingBtn.Visible = true
+end)
 
 C_Color.Name = "Color"
 C_Color.Parent = SettingMenu
