@@ -311,11 +311,19 @@ settCorner_2.CornerRadius = UDim.new(0, 60)
 settCorner_2.Name = "settCorner_2"
 settCorner_2.Parent = settBtn_2
 
---Color
+--SettColor
+local ColorMenu = Instance.new("Frame")
 local C_Color = Instance.new("TextButton")
 local C_UICorner = Instance.new("UICorner")
+local C_UICorner_2 = Instance.new("UICorner")
 
-
+ColorMenu.Name = "ColorMenu"
+ColorMenu.Parent = GUIMenu
+ColorMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
+ColorMenu.Position = UDim2.new(0.604, 0, -0, 0)
+ColorMenu.Size = UDim2.new(0, 226, 0, 329)
+ColorMenu.Visible = false
+ColorMenu.ZIndex = 0
 
 C_Color.Name = "Color"
 C_Color.Parent = SettingMenu
@@ -331,8 +339,20 @@ C_Color.TextColor3 = Color3.fromRGB(255, 170, 0)
 C_Color.TextScaled = true
 C_Color.TextSize = 14.000
 C_Color.TextWrapped = true
+C_Color.MouseButton1Click:Connect(function()
+	settingBtn.Visible = false
+	SettingMenu:TweenPosition(UDim2.new(0.604, 0, -0, 0),"Out","Bounce",1,false)
+	wait(1)
+	SettingMenu.Visible = false
+	
+	ColorMenu.Visible = true
+
+	ColorMenu:TweenPosition(UDim2.new(1.017, 0, 0, 0),"Out","Bounce",1,false)
+end)
 
 C_UICorner.Parent = C_Color
+
+C_UICorner_2.Parent = ColorMenu
 
 ----開啟關閉按鈕-------開啟關閉按鈕------開啟關閉按鈕-----開啟關閉按鈕-----
 
