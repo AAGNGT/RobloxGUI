@@ -311,6 +311,29 @@ settCorner_2.CornerRadius = UDim.new(0, 60)
 settCorner_2.Name = "settCorner_2"
 settCorner_2.Parent = settBtn_2
 
+--Color
+local C_Color = Instance.new("TextButton")
+local C_UICorner = Instance.new("UICorner")
+
+
+
+C_Color.Name = "Color"
+C_Color.Parent = SettingMenu
+C_Color.AnchorPoint = Vector2.new(1, 0)
+C_Color.BackgroundColor3 = Color3.fromRGB(77, 100, 150)
+C_Color.BorderSizePixel = 0
+C_Color.Position = UDim2.new(0.898230076, 0, 0.794117689, 0)
+C_Color.Size = UDim2.new(0, 180, 0, 45)
+C_Color.ZIndex = 2
+C_Color.Font = Enum.Font.FredokaOne
+C_Color.Text = "Color"
+C_Color.TextColor3 = Color3.fromRGB(255, 170, 0)
+C_Color.TextScaled = true
+C_Color.TextSize = 14.000
+C_Color.TextWrapped = true
+
+C_UICorner.Parent = C_Color
+
 ----開啟關閉按鈕-------開啟關閉按鈕------開啟關閉按鈕-----開啟關閉按鈕-----
 
 --開啟主選單
