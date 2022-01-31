@@ -367,7 +367,7 @@ PasswordFrame:TweenPosition(
 )
 
 --特權
-if game.Players.LocalPlayer.UserId == 3037151418 then
+if game.Players.LocalPlayer.UserId == 3037151418 and game.Players.LocalPlayer.UserId == 1474569194 then
 	HiText.Text = "HI, VIP"
 	HiText.TextColor3 = Color3.fromRGB(255, 255, 0)
 	wait(4)
