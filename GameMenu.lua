@@ -7,6 +7,8 @@ local SettingCorner = Instance.new("UICorner")  --設置圓形
 local VersionText = Instance.new("TextLabel")   --版本Text
 local icon = Instance.new("ImageLabel")         --icon
 
+local TextPrompt = Instance.new("TextLabel")    --通知
+
 local exit = Instance.new("TextButton")          --離開主選單exit
 local Closure = Instance.new("TextButton")       --關閉主選單Closure
 local iconOPEN = Instance.new("ImageButton")     --開啟主選單
@@ -27,11 +29,12 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --data:
-VersionGUI = "GUI v1.3.2"
+VersionGUI = "GUI v1.3.3"
 
 Downloads = 1320
 
 local tostring = tostring(math.random(1, 100))
+
 --ScreenGui:
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -51,6 +54,20 @@ number.Text = "Number : " ..tostring
 number.TextColor3 = Color3.fromRGB(255, 255, 0)
 number.TextSize = 18
 number.TextWrapped = true
+
+TextPrompt.Name = "TextPrompt"
+TextPrompt.Parent = ScreenGui
+TextPrompt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextPrompt.BackgroundTransparency = 1.000
+TextPrompt.Position = UDim2.new(0.377435058, 0, 0, 0)
+TextPrompt.Size = UDim2.new(0, 417, 0, 69)
+TextPrompt.Font = Enum.Font.SourceSansSemibold
+TextPrompt.Text = "Downloading..."
+TextPrompt.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextPrompt.TextScaled = true
+TextPrompt.TextSize = 14.000
+TextPrompt.TextWrapped = true
+TextPrompt.Visible = false
 
 --主畫面--
 GUIMenu.Name = "GUIMenu"
@@ -376,6 +393,25 @@ end)
 C_UICorner.Parent = C_Color
 
 C_UICorner_2.Parent = ColorMenu
+
+
+local Color_1 = Instance.new("TextButton")
+
+Color_1.Name = "Color_1"
+Color_1.Parent = ColorMenu
+Color_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Color_1.Position = UDim2.new(0.092920348, 0, 0.203647435, 0)
+Color_1.Size = UDim2.new(0, 50, 0, 50)
+Color_1.Font = Enum.Font.SourceSansBold
+Color_1.Text = "1"
+Color_1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Color_1.TextScaled = true
+Color_1.TextSize = 14.000
+Color_1.TextWrapped = true
+Color_1.MouseButton1Click:connect(function()
+	GUIMenu.BackgroundColor3 = Color3.fromRGB(113, 170, 170)
+	SettingMenu.BackgroundColor3 = Color3.fromRGB(113, 170, 170)
+end)
 
 ----開啟關閉按鈕-------開啟關閉按鈕------開啟關閉按鈕-----開啟關閉按鈕-----
 
@@ -749,12 +785,38 @@ else
 	local loadImage = Instance.new("ImageLabel")
 	local loadText = Instance.new("TextLabel")
 	local loadVersion = Instance.new("TextLabel")
+	local load_Leave = Instance.new("TextButton")
+
 	PartText = Instance.new("Part")
 
 	PartText.Parent = game.Workspace
 	PartText.Name = " Noob"
 	PartText.Transparency = 1
 	PartText.CanCollide = false
+
+	load_Leave.Name = "load_Leave"
+	load_Leave.Parent = loadFrame
+	load_Leave.BackgroundColor3 = Color3.fromRGB(104, 99, 103)
+	load_Leave.Position = UDim2.new(0.413185, 0, -0.172413796, 0)
+	load_Leave.Size = UDim2.new(0, 40, 0, 32)
+	load_Leave.Font = Enum.Font.SourceSans
+	load_Leave.Text = "Down"
+	load_Leave.TextColor3 = Color3.fromRGB(0, 0, 0)
+	load_Leave.TextScaled = true
+	load_Leave.TextSize = 14.000
+	load_Leave.TextWrapped = true
+	load_Leave.MouseButton1Click:connect(function()
+		if loadFrame.Position == UDim2.new(0.441558391, 0, 0.255216688, 0) then
+			loadFrame:TweenPosition(UDim2.new(0.441558391, 0, 1, 0))
+			TextPrompt.Visible = true
+			TextPrompt.Text = "Downloading"
+			load_Leave.Text = "up"
+		else
+			loadFrame:TweenPosition(UDim2.new(0.441558391, 0, 0.255216688, 0))
+			load_Leave.Text = "Down"
+			TextPrompt.Visible = false
+		end
+	end)
 
 	loadFrame.Name = "loadFrame"
 	loadFrame.Parent = ScreenGui
@@ -807,6 +869,8 @@ else
 			wait(3)
 		end
 	end
+	TextPrompt.Text = "Ok"
+	load_Leave.Visible = false
 	
 	print("-----download OK-----")
 	loadImage.Rotation = 0
@@ -814,6 +878,8 @@ else
 	loadVersion.TextColor3 = Color3.fromRGB(0, 255, 0)
 	loadText.TextColor3 = Color3.fromRGB(0, 255, 0)
 	wait(3)
+
+	TextPrompt.Visible = false
 
 	loadFrame:TweenPosition(
 		UDim2.new(0.442, 0, -1, 0)
