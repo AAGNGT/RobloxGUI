@@ -396,6 +396,7 @@ C_UICorner_2.Parent = ColorMenu
 
 
 local Color_1 = Instance.new("TextButton")
+local Color_2 = Instance.new("TextButton")
 
 Color_1.Name = "Color_1"
 Color_1.Parent = ColorMenu
@@ -408,9 +409,35 @@ Color_1.TextColor3 = Color3.fromRGB(0, 0, 0)
 Color_1.TextScaled = true
 Color_1.TextSize = 14.000
 Color_1.TextWrapped = true
+Color_1.BackgroundColor3 = Color3.fromRGB(0, 250, 0)
 Color_1.MouseButton1Click:connect(function()
+	Color_1.BackgroundColor3 = Color3.fromRGB(0, 250, 0)
+	Color_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	
+	GUIMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
+	SettingMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
+	ColorMenu.BackgroundColor3 = Color3.fromRGB(60, 66, 66)
+end)
+
+
+Color_2.Name = "Color_2"
+Color_2.Parent = ColorMenu
+Color_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Color_2.Position = UDim2.new(0.389380515, 0, 0.203647435, 0)
+Color_2.Size = UDim2.new(0, 50, 0, 50)
+Color_2.Font = Enum.Font.SourceSansBold
+Color_2.Text = "2"
+Color_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Color_2.TextScaled = true
+Color_2.TextSize = 14.000
+Color_2.TextWrapped = true
+Color_2.MouseButton1Click:connect(function()
+	Color_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Color_2.BackgroundColor3 = Color3.fromRGB(0, 250, 0)
+
 	GUIMenu.BackgroundColor3 = Color3.fromRGB(113, 170, 170)
 	SettingMenu.BackgroundColor3 = Color3.fromRGB(113, 170, 170)
+	ColorMenu.BackgroundColor3 = Color3.fromRGB(113, 170, 170)
 end)
 
 ----開啟關閉按鈕-------開啟關閉按鈕------開啟關閉按鈕-----開啟關閉按鈕-----
