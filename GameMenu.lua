@@ -31,7 +31,7 @@ local Black = Instance.new("Frame")
 --data:
 VersionGUI = "GUI v1.3.3"
 
-Downloads = 1320
+Downloads = 1389
 
 local tostring = tostring(math.random(1, 100))
 
@@ -809,7 +809,6 @@ else
 		if loadFrame.Position == UDim2.new(0.441558391, 0, 0.255216688, 0) then
 			loadFrame:TweenPosition(UDim2.new(0.441558391, 0, 1, 0))
 			TextPrompt.Visible = true
-			TextPrompt.Text = "Downloading"
 			load_Leave.Text = "up"
 		else
 			loadFrame:TweenPosition(UDim2.new(0.441558391, 0, 0.255216688, 0))
@@ -858,9 +857,10 @@ else
 
 
 	for i = 1, Downloads do
-		wait(0.000001)
+		wait(0.00000001)
 		loadImage.Rotation = loadImage.Rotation + 5
 		loadText.Text = "Downloading " ..i.. "/" ..Downloads
+		TextPrompt.Text = "Downloading " ..i.. "/" ..Downloads
 		if i == 489 or i == 998 or i == 1108 or i == 1210 then
 			wait(0.9)
 		end
@@ -869,6 +869,7 @@ else
 			wait(3)
 		end
 	end
+	
 	TextPrompt.Text = "Ok"
 	load_Leave.Visible = false
 	
@@ -879,11 +880,14 @@ else
 	loadText.TextColor3 = Color3.fromRGB(0, 255, 0)
 	wait(3)
 
-	TextPrompt.Visible = false
-
-	loadFrame:TweenPosition(
-		UDim2.new(0.442, 0, -1, 0)
-	)
+	if TextPrompt.Visible == true then
+		loadFrame.Visible = false
+		loadFrame:TweenPosition(UDim2.new(0.442, 0, -1, 0))
+	else
+		loadFrame:TweenPosition(UDim2.new(0.442, 0, -1, 0))
+	end
+	
+	TextPrompt.Visible == true
 	iconOPEN.Visible = true
 end
 
