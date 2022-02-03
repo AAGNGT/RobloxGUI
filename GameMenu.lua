@@ -887,7 +887,7 @@ else
 		loadFrame:TweenPosition(UDim2.new(0.442, 0, -1, 0))
 	end
 	
-	TextPrompt.Visible == true
+	TextPrompt.Visible = false
 	iconOPEN.Visible = true
 end
 
