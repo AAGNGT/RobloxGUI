@@ -4,5 +4,5 @@
 --RobloxGUI
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/GameMenu.lua", true))()
 
---傳送遊戲script
+--傳送遊戲
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
