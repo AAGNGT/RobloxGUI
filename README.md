@@ -1,4 +1,8 @@
 # AAGNGT製作的RobloxGUI
+我製作這個腳本,不是程式,只是因為無聊
+
+--RobloxGUI
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/GameMenu.lua", true))()
 
+--傳送遊戲script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/script.lua", true))()
