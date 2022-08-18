@@ -892,7 +892,7 @@ else
 			wait(0.9)
 		end
 
-		if i == Downloads -= 1 then
+		if Downloads == i then
 			wait(3)
 		end
 	end
