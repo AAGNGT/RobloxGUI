@@ -29,9 +29,9 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --data:
-VersionGUI = "GUI v1.3.3"
+VersionGUI = "GUI v1.3.4"
 
-Downloads = 1389
+Downloads = 1280
 
 local tostring = tostring(math.random(1, 100))
 
@@ -537,6 +537,7 @@ local script5 = Instance.new("ImageButton")      --誰是殺手
 local script6 = Instance.new("ImageButton")      --時髦星期五
 local script7 = Instance.new("ImageButton")      --arsenal
 local script8 = Instance.new("ImageButton")      --史詩級小遊戲
+local script9 = Instance.new("ImageButton")      --Doors
 
 GameMenu.Name = "GameMenu"
 GameMenu.Parent = GUIMenu
@@ -728,6 +729,20 @@ script8.MouseButton1Click:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Epic%20Minigames/EpicMinigamesGUI"))()
 end)
 
+--Doors
+script9.Name = "script9"
+script9.Parent = GameMenu
+script9.ImageTransparency = 0.4
+script9.AutoButtonColor = false
+script9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+script9.Position = UDim2.new(0.021, 0, 0, 0)
+script9.Size = UDim2.new(0, 100, 0, 100)
+script9.Image = "http://www.roblox.com/asset/?id=10799441537"
+script9.MouseButton1Click:connect(function()
+	Sound:Play()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()
+end)
+
 --自動排版
 GameUIGridLayout.Parent = GameMenu
 GameUIGridLayout.SortOrder = Enum.SortOrder.Name
@@ -788,6 +803,12 @@ script8.MouseEnter:Connect(function()
 end)
 script8.MouseLeave:Connect(function()
 	script8.ImageTransparency = 0.4
+end)
+script9.MouseEnter:Connect(function()
+	script9.ImageTransparency = 0
+end)
+script9.MouseLeave:Connect(function()
+	script9.ImageTransparency = 0.4
 end)
 
 resetBtn.MouseEnter:Connect(function()
