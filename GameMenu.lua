@@ -29,7 +29,7 @@ local Blur = Instance.new("BlurEffect")
 local Black = Instance.new("Frame")  
 
 --data:
-VersionGUI = "GUI v1.3.4"
+VersionGUI = "GUI v1.3.4⚠️"
 
 Downloads = 1280
 
