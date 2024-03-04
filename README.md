@@ -1,4 +1,4 @@
-# AAGNGT製作的RobloxGUI (NO work)
+# AAGNGT製作的RobloxGUI (NO working)
 我製作這個腳本,不是程式,只是因為無聊
 
 --RobloxGUI
