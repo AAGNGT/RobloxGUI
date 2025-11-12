@@ -1,6 +1,6 @@
-# AAGNGT製作的RobloxGUI (NO working)
+# AAGNGT製作的RobloxGUI (NO wor de bug fix
 我製作這個腳本,不是程式,只是因為無聊
-
+to be coming so soon
 --RobloxGUI
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AAGNGT/RobloxGUI/main/GameMenu.lua", true))()
